@@ -48,7 +48,6 @@ export const BenchmarkChart = ({ data }) => {
             right: 80,
           }}
         >
-          <CartesianGrid horizontal={false} />
           <YAxis
             dataKey="model"
             type="category"
