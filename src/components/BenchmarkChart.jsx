@@ -37,7 +37,7 @@ export const BenchmarkChart = ({ data }) => {
   });
 
   return (
-    <div className="w-full h-full flex items-center justify-center p-8">
+    <div className="w-full h-full flex items-center justify-center px-8 py-32">
       <ChartContainer config={chartConfig} className="h-full w-full">
         <BarChart
           accessibilityLayer
@@ -48,7 +48,7 @@ export const BenchmarkChart = ({ data }) => {
             right: 80,
           }}
         >
-          <CartesianGrid horizontal={false} stroke="#f1f5f9" strokeWidth={1} />
+          <CartesianGrid horizontal={false} stroke="#e2e8f0" strokeWidth={1} />
           <YAxis
             dataKey="model"
             type="category"
