@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: #FFFFFF;
+  color: #1d1d1f;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d1d6;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #86868b;
+}
+
+/* Mermaid chart text styling */
+.mermaid text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 13px !important;
+}
+
+.mermaid .label {
+  font-size: 13px !important;
+}
+
+.mermaid rect,
+.mermaid polygon,
+.mermaid circle {
+  rx: 8px !important;
+}
