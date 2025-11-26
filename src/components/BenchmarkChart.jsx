@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, LabelList, XAxis, YAxis } from "recharts"
 import {
   ChartContainer,
   ChartTooltip,
@@ -20,6 +20,7 @@ export const BenchmarkChart = ({ data }) => {
   const chartData = data.map(item => ({
     model: item.model,
     score: parseFloat(item.score),
+    fill: modelColors[item.model] || '#94a3b8'
   }));
 
   // Create chart config for shadcn
@@ -29,56 +30,63 @@ export const BenchmarkChart = ({ data }) => {
       color: modelColors[item.model] || '#94a3b8'
     };
     return acc;
-  }, {});
+  }, {
+    label: {
+      color: "hsl(var(--background))",
+    },
+  });
 
   return (
-    <div className="w-full h-full p-8">
+    <div className="w-full h-full flex items-center justify-center p-8">
       <ChartContainer config={chartConfig} className="h-full w-full">
         <BarChart
+          accessibilityLayer
           data={chartData}
-          margin={{ top: 20, right: 30, left: 20, bottom: 80 }}
+          layout="vertical"
+          margin={{
+            left: 0,
+            right: 80,
+          }}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
-          <XAxis
-            dataKey="model"
-            angle={-45}
-            textAnchor="end"
-            height={100}
-            interval={0}
-            tick={{ fill: '#475569', fontSize: 13, fontWeight: 500 }}
-            tickLine={false}
-            axisLine={false}
-          />
+          <CartesianGrid horizontal={false} />
           <YAxis
-            domain={[0, 100]}
-            tick={{ fill: '#475569', fontSize: 13 }}
+            dataKey="model"
+            type="category"
             tickLine={false}
+            tickMargin={10}
             axisLine={false}
-            label={{
-              value: 'Score (%)',
-              angle: -90,
-              position: 'insideLeft',
-              fill: '#475569',
-              fontSize: 14,
-              fontWeight: 600
-            }}
+            hide
+          />
+          <XAxis
+            dataKey="score"
+            type="number"
+            hide
+            domain={[0, 100]}
           />
           <ChartTooltip
-            content={<ChartTooltipContent />}
-            cursor={{ fill: 'rgba(0, 0, 0, 0.05)' }}
+            cursor={false}
+            content={<ChartTooltipContent indicator="line" />}
           />
           <Bar
             dataKey="score"
-            radius={[8, 8, 0, 0]}
-            maxBarSize={80}
-            fill="currentColor"
+            layout="vertical"
+            radius={6}
           >
-            {chartData.map((entry, index) => (
-              <rect
-                key={`bar-${index}`}
-                fill={modelColors[entry.model]}
-              />
-            ))}
+            <LabelList
+              dataKey="model"
+              position="insideLeft"
+              offset={12}
+              className="fill-white font-medium"
+              fontSize={14}
+            />
+            <LabelList
+              dataKey="score"
+              position="right"
+              offset={12}
+              className="fill-foreground font-bold"
+              fontSize={16}
+              formatter={(value) => `${value}%`}
+            />
           </Bar>
         </BarChart>
       </ChartContainer>
