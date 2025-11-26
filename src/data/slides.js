@@ -111,125 +111,80 @@ export const slides = [
     title: "SWE-bench Verified",
     subtitle: "Benchmark Comparison",
     content: "Real-world GitHub issue resolution. Measures coding agent capabilities on 500 validated tasks.",
-    visualType: 'mermaid',
-    visualContent: `%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e7ff','primaryTextColor':'#1e293b','primaryBorderColor':'#818cf8','lineColor':'#64748b','secondaryColor':'#f1f5f9','fontSize':'14px'}}}%%
-graph TD
-    subgraph " "
-    A["Claude Opus 4.5<br/>80.9%"]
-    B["Gemini 3 Pro<br/>76.2%"]
-    C["GPT-5.1<br/>76.3%"]
-    D["Qwen3-Max<br/>69.6%"]
-    E["DeepSeek R1<br/>49.2%"]
-    F["Kimi K2<br/>65.8%"]
-    end
-    style A fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style B fill:#60a5fa,stroke:#3b82f6,stroke-width:3px
-    style C fill:#34d399,stroke:#10b981,stroke-width:3px
-    style D fill:#22d3ee,stroke:#06b6d4,stroke-width:3px
-    style E fill:#a78bfa,stroke:#8b5cf6,stroke-width:3px
-    style F fill:#f472b6,stroke:#ec4899,stroke-width:3px`,
+    benchmarkData: [
+      { model: "Claude Opus 4.5", score: "80.9" },
+      { model: "GPT-5.1", score: "76.3" },
+      { model: "Gemini 3 Pro", score: "76.2" },
+      { model: "Qwen3-Max", score: "69.6" },
+      { model: "Kimi K2", score: "65.8" },
+      { model: "DeepSeek R1", score: "49.2" }
+    ],
     icon: Code,
-    type: "mermaid_split"
+    type: "benchmark_chart"
   },
   {
     id: 9,
     title: "Human Eval",
     subtitle: "Benchmark Comparison",
     content: "Code generation accuracy. Tests ability to write correct Python functions from docstrings.",
-    visualType: 'mermaid',
-    visualContent: `%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e7ff','primaryTextColor':'#1e293b','primaryBorderColor':'#818cf8','lineColor':'#64748b','secondaryColor':'#f1f5f9','fontSize':'14px'}}}%%
-graph TD
-    subgraph " "
-    A["Claude Opus 4.5<br/>~96%"]
-    B["Gemini 3 Pro<br/>~95%"]
-    C["GPT-5.1<br/>94.5%"]
-    D["Qwen3-Max<br/>~92%"]
-    E["DeepSeek R1<br/>~90%"]
-    F["Kimi K2<br/>~93%"]
-    end
-    style A fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style B fill:#60a5fa,stroke:#3b82f6,stroke-width:3px
-    style C fill:#34d399,stroke:#10b981,stroke-width:3px
-    style D fill:#22d3ee,stroke:#06b6d4,stroke-width:3px
-    style E fill:#a78bfa,stroke:#8b5cf6,stroke-width:3px
-    style F fill:#f472b6,stroke:#ec4899,stroke-width:3px`,
+    benchmarkData: [
+      { model: "Claude Opus 4.5", score: "96" },
+      { model: "Gemini 3 Pro", score: "95" },
+      { model: "GPT-5.1", score: "94.5" },
+      { model: "Kimi K2", score: "93" },
+      { model: "Qwen3-Max", score: "92" },
+      { model: "DeepSeek R1", score: "90" }
+    ],
     icon: Code,
-    type: "mermaid_split"
+    type: "benchmark_chart"
   },
   {
     id: 10,
     title: "AIME 2025",
     subtitle: "Benchmark Comparison",
     content: "Advanced math reasoning. American Invitational Mathematics Examination problems.",
-    visualType: 'mermaid',
-    visualContent: `%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e7ff','primaryTextColor':'#1e293b','primaryBorderColor':'#818cf8','lineColor':'#64748b','secondaryColor':'#f1f5f9','fontSize':'14px'}}}%%
-graph TD
-    subgraph " "
-    A["Claude Opus 4.5<br/>87.0%"]
-    B["Gemini 3 Pro<br/>95.0%"]
-    C["GPT-5.1<br/>94.0%"]
-    D["Qwen3-Max<br/>100%"]
-    E["DeepSeek R1<br/>79.8%"]
-    F["Kimi K2<br/>~88%"]
-    end
-    style A fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style B fill:#60a5fa,stroke:#3b82f6,stroke-width:3px
-    style C fill:#34d399,stroke:#10b981,stroke-width:3px
-    style D fill:#22d3ee,stroke:#06b6d4,stroke-width:3px
-    style E fill:#a78bfa,stroke:#8b5cf6,stroke-width:3px
-    style F fill:#f472b6,stroke:#ec4899,stroke-width:3px`,
+    benchmarkData: [
+      { model: "Qwen3-Max", score: "100" },
+      { model: "Gemini 3 Pro", score: "95.0" },
+      { model: "GPT-5.1", score: "94.0" },
+      { model: "Kimi K2", score: "88" },
+      { model: "Claude Opus 4.5", score: "87.0" },
+      { model: "DeepSeek R1", score: "79.8" }
+    ],
     icon: Brain,
-    type: "mermaid_split"
+    type: "benchmark_chart"
   },
   {
     id: 11,
     title: "MATH-500",
     subtitle: "Benchmark Comparison",
     content: "High-school level math problems requiring detailed reasoning steps.",
-    visualType: 'mermaid',
-    visualContent: `%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e7ff','primaryTextColor':'#1e293b','primaryBorderColor':'#818cf8','lineColor':'#64748b','secondaryColor':'#f1f5f9','fontSize':'14px'}}}%%
-graph TD
-    subgraph " "
-    A["Claude Opus 4.5<br/>~90%"]
-    B["Gemini 3 Pro<br/>~95%"]
-    C["GPT-5.1<br/>96.4%"]
-    D["Qwen3-Max<br/>~93%"]
-    E["DeepSeek R1<br/>97.3%"]
-    F["Kimi K2<br/>97.4%"]
-    end
-    style A fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style B fill:#60a5fa,stroke:#3b82f6,stroke-width:3px
-    style C fill:#34d399,stroke:#10b981,stroke-width:3px
-    style D fill:#22d3ee,stroke:#06b6d4,stroke-width:3px
-    style E fill:#a78bfa,stroke:#8b5cf6,stroke-width:3px
-    style F fill:#f472b6,stroke:#ec4899,stroke-width:3px`,
+    benchmarkData: [
+      { model: "Kimi K2", score: "97.4" },
+      { model: "DeepSeek R1", score: "97.3" },
+      { model: "GPT-5.1", score: "96.4" },
+      { model: "Gemini 3 Pro", score: "95" },
+      { model: "Qwen3-Max", score: "93" },
+      { model: "Claude Opus 4.5", score: "90" }
+    ],
     icon: Brain,
-    type: "mermaid_split"
+    type: "benchmark_chart"
   },
   {
     id: 12,
     title: "GPQA Diamond",
     subtitle: "Benchmark Comparison",
     content: "PhD-level reasoning across physics, chemistry, and biology. Graduate-level science questions.",
-    visualType: 'mermaid',
-    visualContent: `%%{init: {'theme':'base', 'themeVariables': { 'primaryColor':'#e0e7ff','primaryTextColor':'#1e293b','primaryBorderColor':'#818cf8','lineColor':'#64748b','secondaryColor':'#f1f5f9','fontSize':'14px'}}}%%
-graph TD
-    subgraph " "
-    A["Claude Opus 4.5<br/>83.4%"]
-    B["Gemini 3 Pro<br/>91.9%"]
-    C["GPT-5.1<br/>88.1%"]
-    D["Qwen3-Max<br/>81.1%"]
-    E["DeepSeek R1<br/>71.5%"]
-    F["Kimi K2<br/>~85%"]
-    end
-    style A fill:#fbbf24,stroke:#f59e0b,stroke-width:3px
-    style B fill:#60a5fa,stroke:#3b82f6,stroke-width:3px
-    style C fill:#34d399,stroke:#10b981,stroke-width:3px
-    style D fill:#22d3ee,stroke:#06b6d4,stroke-width:3px
-    style E fill:#a78bfa,stroke:#8b5cf6,stroke-width:3px
-    style F fill:#f472b6,stroke:#ec4899,stroke-width:3px`,
+    benchmarkData: [
+      { model: "Gemini 3 Pro", score: "91.9" },
+      { model: "GPT-5.1", score: "88.1" },
+      { model: "Kimi K2", score: "85" },
+      { model: "Claude Opus 4.5", score: "83.4" },
+      { model: "Qwen3-Max", score: "81.1" },
+      { model: "DeepSeek R1", score: "71.5" }
+    ],
     icon: Brain,
-    type: "mermaid_split"
+    type: "benchmark_chart"
   },
 
   // --- MODULE 2: PROMPT ENGINEERING ---

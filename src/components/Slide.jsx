@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import mermaid from 'mermaid';
+import { BenchmarkChart } from './BenchmarkChart';
 
 const container = {
   hidden: { opacity: 0 },
@@ -63,6 +64,7 @@ export const Slide = ({ slide, currentSlideIndex, totalSlides }) => {
     if (s.type === 'title' || s.id === 1) return 'intro';
     if (s.type === 'code_split') return 'code';
     if (s.type === 'mermaid_split') return 'mermaid_split';
+    if (s.type === 'benchmark_chart') return 'benchmark_chart';
     return 'standard';
   };
 
@@ -281,7 +283,7 @@ export const Slide = ({ slide, currentSlideIndex, totalSlides }) => {
           <>
             {/* LEFT: Header + Content (40%) */}
             <div className="w-[40%] h-full flex flex-col justify-center p-16 xl:p-20 relative bg-gray-50 border-r border-gray-100">
-               <motion.div 
+               <motion.div
                 className="w-full flex flex-col items-start text-left"
                 variants={container}
                 initial="hidden"
@@ -308,6 +310,39 @@ export const Slide = ({ slide, currentSlideIndex, totalSlides }) => {
                     {slide.visualContent}
                   </div>
                 </div>
+              </motion.div>
+            </div>
+          </>
+        )}
+
+        {/* --- BENCHMARK CHART LAYOUT --- */}
+        {layout === 'benchmark_chart' && (
+          <>
+            {/* LEFT: Header + Content (40%) */}
+            <div className="w-[40%] h-full flex flex-col justify-center p-16 xl:p-20 relative bg-gray-50 border-r border-gray-100">
+               <motion.div
+                className="w-full flex flex-col items-start text-left"
+                variants={container}
+                initial="hidden"
+                animate="show"
+                key={`header-${slide.id}`}
+              >
+                <HeaderContent align="left" />
+                <motion.p variants={item} className="text-xl text-secondary mt-8 leading-relaxed font-medium">
+                  {slide.content}
+                </motion.p>
+              </motion.div>
+            </div>
+            {/* RIGHT: Chart Block (60%) */}
+            <div className="w-[60%] h-full flex flex-col justify-center relative bg-white">
+               <motion.div
+                className="w-full h-full flex items-center justify-center"
+                variants={container}
+                initial="hidden"
+                animate="show"
+                key={`chart-${slide.id}`}
+              >
+                <BenchmarkChart data={slide.benchmarkData} />
               </motion.div>
             </div>
           </>
