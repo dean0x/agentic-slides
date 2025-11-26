@@ -62,7 +62,7 @@ export const BenchmarkChart = ({ data }) => {
             type="number"
             domain={[0, 100]}
             tickLine={false}
-            axisLine={false}
+            axisLine={{ stroke: '#e2e8f0', strokeWidth: 1 }}
             tick={{ fill: '#64748b', fontSize: 12 }}
             tickFormatter={(value) => `${value}%`}
           />
