@@ -124,22 +124,6 @@ export const slides = [
   },
   {
     id: 9,
-    title: "Human Eval",
-    subtitle: "Benchmark Comparison",
-    content: "Code generation accuracy. Tests ability to write correct Python functions from docstrings.",
-    benchmarkData: [
-      { model: "Claude Opus 4.5", score: "96" },
-      { model: "Gemini 3 Pro", score: "95" },
-      { model: "GPT-5.1", score: "94.5" },
-      { model: "Kimi K2", score: "93" },
-      { model: "Qwen3-Max", score: "92" },
-      { model: "DeepSeek R1", score: "90" }
-    ],
-    icon: Code,
-    type: "benchmark_chart"
-  },
-  {
-    id: 10,
     title: "AIME 2025",
     subtitle: "Benchmark Comparison",
     content: "Advanced math reasoning. American Invitational Mathematics Examination problems.",
@@ -155,23 +139,7 @@ export const slides = [
     type: "benchmark_chart"
   },
   {
-    id: 11,
-    title: "MATH-500",
-    subtitle: "Benchmark Comparison",
-    content: "High-school level math problems requiring detailed reasoning steps.",
-    benchmarkData: [
-      { model: "Kimi K2", score: "97.4" },
-      { model: "DeepSeek R1", score: "97.3" },
-      { model: "GPT-5.1", score: "96.4" },
-      { model: "Gemini 3 Pro", score: "95" },
-      { model: "Qwen3-Max", score: "93" },
-      { model: "Claude Opus 4.5", score: "90" }
-    ],
-    icon: Brain,
-    type: "benchmark_chart"
-  },
-  {
-    id: 12,
+    id: 10,
     title: "GPQA Diamond",
     subtitle: "Benchmark Comparison",
     content: "PhD-level reasoning across physics, chemistry, and biology. Graduate-level science questions.",
@@ -189,7 +157,7 @@ export const slides = [
 
   // --- MODULE 2: PROMPT ENGINEERING ---
   {
-    id: 13,
+    id: 11,
     title: "Module 2: Prompt Engineering",
     subtitle: "Communication",
     content: "Clear structure and context matter more than clever wording.",
@@ -198,7 +166,7 @@ export const slides = [
     type: "title"
   },
   {
-    id: 14,
+    id: 12,
     title: "Core Principles",
     content: "\"Most prompt failures come from ambiguity, not model limitations.\"",
     items: [
@@ -209,7 +177,7 @@ export const slides = [
     type: "list"
   },
   {
-    id: 15,
+    id: 13,
     title: "Technique 1: Context & Constraints",
     content: "Set the stage for the model.",
     code: `You are a senior software architect reviewing code.
@@ -219,7 +187,7 @@ Focus on security vulnerabilities and performance issues.`,
     type: "code_split"
   },
   {
-    id: 16,
+    id: 14,
     title: "Technique 2: Role/Persona",
     content: "Give the model a frame of reference.",
     items: [
@@ -231,7 +199,7 @@ Focus on security vulnerabilities and performance issues.`,
     type: "list"
   },
   {
-    id: 17,
+    id: 15,
     title: "Technique 3: Few-Shot",
     content: "Provide examples of input -> output.",
     code: `Convert product to JSON:
@@ -245,7 +213,7 @@ Output:`,
     type: "code_split"
   },
   {
-    id: 18,
+    id: 16,
     title: "Technique 4: Chain of Thought",
     content: "Ask it to 'Think step-by-step'.",
     items: [
@@ -256,7 +224,7 @@ Output:`,
     type: "list"
   },
   {
-    id: 19,
+    id: 17,
     title: "Technique 5: Output Format",
     content: "Specify exactly what you want back.",
     items: [
@@ -270,7 +238,7 @@ Output:`,
 
   // --- MODULE 2B: STRUCTURED OUTPUT ---
   {
-    id: 20,
+    id: 18,
     title: "Module 2B: Structured Output",
     subtitle: "Reliability",
     content: "Ensuring LLM outputs are parseable for your code.",
@@ -279,7 +247,7 @@ Output:`,
     type: "title"
   },
   {
-    id: 21,
+    id: 19,
     title: "Why Structured Output?",
     content: "When building apps, you need predictability.",
     items: [
@@ -291,7 +259,7 @@ Output:`,
     type: "list"
   },
   {
-    id: 22,
+    id: 20,
     title: "Approach 1: Prompt-Based",
     content: "The basic way. Just ask for JSON.",
     code: `Respond ONLY with valid JSON:
@@ -303,7 +271,7 @@ Output:`,
     type: "code_split"
   },
   {
-    id: 23,
+    id: 21,
     title: "Approach 2: Native JSON Mode",
     content: "Most APIs support this now.",
     code: `const response = await client.chat.completions.create({
@@ -315,7 +283,7 @@ Output:`,
     type: "code_split"
   },
   {
-    id: 24,
+    id: 22,
     title: "Approach 3: Schema-Enforced",
     content: "The best way. Define a schema.",
     code: `interface Sentiment {
@@ -331,7 +299,7 @@ const response = await client.beta.chat.completions.parse({
     type: "code_split"
   },
   {
-    id: 25,
+    id: 23,
     title: "Zod Validation",
     content: "Validate the data after you get it.",
     code: `import { z } from 'zod';
@@ -349,7 +317,7 @@ type ProductReview = z.infer<typeof ProductReviewSchema>;`,
     type: "code_split"
   },
   {
-    id: 26,
+    id: 24,
     title: "Best Practice: Validation",
     content: "Always validate LLM output before using it in your application.",
     code: `import { z } from 'zod';
@@ -374,7 +342,7 @@ console.log(result.sentiment); // Type-safe access`,
     type: "code_split"
   },
   {
-    id: 27,
+    id: 25,
     title: "Best Practice: Error Handling",
     content: "Handle API errors and invalid responses gracefully with fallbacks.",
     code: `async function callLLM(prompt: string, retries = 3) {
@@ -401,7 +369,7 @@ console.log(result.sentiment); // Type-safe access`,
     type: "code_split"
   },
   {
-    id: 28,
+    id: 26,
     title: "Best Practice: Constraints",
     content: "Set explicit constraints on output length and structure.",
     code: `const ProductSchema = z.object({
@@ -428,7 +396,7 @@ const response = await client.messages.create({
     type: "code_split"
   },
   {
-    id: 29,
+    id: 27,
     title: "Advanced Pattern: Prompt Chaining",
     content: "Break complex tasks into sequential steps where each output feeds the next.",
     code: `// Step 1: Research
@@ -456,7 +424,7 @@ const draft = await client.messages.create({
     type: "code_split"
   },
   {
-    id: 30,
+    id: 28,
     title: "Layered Prompting",
     content: "Combine multiple techniques in a single prompt for maximum effectiveness.",
     code: `const userFeedback = "The checkout is too slow...";
@@ -490,7 +458,7 @@ Feedback: "\${userFeedback}"\`
 
   // --- MODULE 3: APIs ---
   {
-    id: 31,
+    id: 29,
     title: "Module 3: Working with APIs",
     subtitle: "Integration",
     content: "Programmatic access to intelligence.",
@@ -499,7 +467,7 @@ Feedback: "\${userFeedback}"\`
     type: "title"
   },
   {
-    id: 32,
+    id: 30,
     title: "API Basics",
     content: "Simple, stateless HTTP requests.",
     code: `import Anthropic from '@anthropic-ai/sdk';
@@ -519,7 +487,7 @@ console.log(message.content[0].text);`,
     type: "code_split"
   },
   {
-    id: 33,
+    id: 31,
     title: "Key Parameters",
     content: "Tuning the response.",
     items: [
@@ -533,7 +501,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 34,
+    id: 32,
     title: "Streaming vs Non-Streaming",
     content: "Improving User Experience.",
     items: [
@@ -544,7 +512,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 35,
+    id: 33,
     title: "Production Concerns",
     content: "Things to watch out for.",
     items: [
@@ -558,7 +526,7 @@ console.log(message.content[0].text);`,
 
   // --- MODULE 4: RAG ---
   {
-    id: 36,
+    id: 34,
     title: "Module 4: RAG",
     subtitle: "Retrieval Augmented Generation",
     content: "Giving LLMs access to your custom data.",
@@ -567,7 +535,7 @@ console.log(message.content[0].text);`,
     type: "title"
   },
   {
-    id: 37,
+    id: 35,
     title: "Why RAG?",
     content: "Overcoming LLM limitations.",
     items: [
@@ -579,7 +547,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 38,
+    id: 36,
     title: "RAG Architecture",
     content: "The flow of data from document to answer.",
     visualType: "mermaid",
@@ -596,7 +564,7 @@ console.log(message.content[0].text);`,
     type: "mermaid_split"
   },
   {
-    id: 39,
+    id: 37,
     title: "Step 1: Chunking",
     content: "Breaking data down.",
     items: [
@@ -608,7 +576,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 40,
+    id: 38,
     title: "Step 2: Embedding",
     content: "Text to Numbers.",
     items: [
@@ -620,7 +588,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 41,
+    id: 39,
     title: "Step 3: Vector Databases",
     content: "Where to store your embeddings.",
     items: [
@@ -634,7 +602,7 @@ console.log(message.content[0].text);`,
     type: "cards"
   },
   {
-    id: 42,
+    id: 40,
     title: "Step 4 & 5: Retrieval & Generation",
     content: "The Query Loop.",
     items: [
@@ -647,7 +615,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 43,
+    id: 41,
     title: "RAG Best Practices (2025)",
     content: "Optimizing for quality.",
     items: [
@@ -660,7 +628,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 44,
+    id: 42,
     title: "Advanced RAG Variants",
     content: "For complex use cases.",
     items: [
@@ -675,7 +643,7 @@ console.log(message.content[0].text);`,
 
   // --- MODULE 5: TOOL USE ---
   {
-    id: 45,
+    id: 43,
     title: "Module 5: Tool Use",
     subtitle: "Function Calling",
     content: "Connecting LLMs to the outside world.",
@@ -684,7 +652,7 @@ console.log(message.content[0].text);`,
     type: "title"
   },
   {
-    id: 46,
+    id: 44,
     title: "What is Tool Use?",
     content: "Giving LLMs hands.",
     items: [
@@ -697,7 +665,7 @@ console.log(message.content[0].text);`,
     type: "list"
   },
   {
-    id: 47,
+    id: 45,
     title: "How It Works",
     content: "The model decides when to call a function.",
     code: `{
@@ -714,7 +682,7 @@ console.log(message.content[0].text);`,
     type: "code_split"
   },
   {
-    id: 48,
+    id: 46,
     title: "Tool Call in Action",
     content: "Calling Claude with tools and executing them when requested.",
     code: `const response = await client.messages.create({
@@ -733,7 +701,7 @@ if (response.stop_reason === "tool_use") {
     type: "code_split"
   },
   {
-    id: 49,
+    id: 47,
     title: "Common Patterns",
     content: "What can you do with tools?",
     items: [
@@ -748,7 +716,7 @@ if (response.stop_reason === "tool_use") {
 
   // --- MODULE 6: MCP ---
   {
-    id: 50,
+    id: 48,
     title: "Module 6: MCP",
     subtitle: "Model Context Protocol",
     content: "The 'USB-C' for AI applications.",
@@ -757,7 +725,7 @@ if (response.stop_reason === "tool_use") {
     type: "title"
   },
   {
-    id: 51,
+    id: 49,
     title: "Why MCP?",
     content: "Standardized connection between AI and data.",
     items: [
@@ -769,7 +737,7 @@ if (response.stop_reason === "tool_use") {
     type: "list"
   },
   {
-    id: 52,
+    id: 50,
     title: "MCP Architecture",
     content: "Client-Server protocol connecting AI applications to data sources and tools.",
     visualType: "mermaid",
@@ -797,7 +765,7 @@ if (response.stop_reason === "tool_use") {
     type: "mermaid_split"
   },
   {
-    id: 53,
+    id: 51,
     title: "MCP Primitives",
     content: "What can MCP do?",
     items: [
@@ -809,7 +777,7 @@ if (response.stop_reason === "tool_use") {
     type: "cards"
   },
   {
-    id: 54,
+    id: 52,
     title: "Pre-built Servers",
     content: "Ready to use integrations.",
     items: [
@@ -823,7 +791,7 @@ if (response.stop_reason === "tool_use") {
     type: "list"
   },
   {
-    id: 55,
+    id: 53,
     title: "Getting Started",
     content: "How to use MCP.",
     items: [
@@ -838,7 +806,7 @@ if (response.stop_reason === "tool_use") {
 
   // --- MODULE 7: AGENTS ---
   {
-    id: 56,
+    id: 54,
     title: "Module 7: Agents",
     subtitle: "Autonomous Systems",
     content: "Systems that Perceive, Reason, Act, and Learn.",
@@ -847,7 +815,7 @@ if (response.stop_reason === "tool_use") {
     type: "title"
   },
   {
-    id: 57,
+    id: 55,
     title: "What are Agents?",
     content: "Beyond simple chatbots. Agents are autonomous systems that perceive their environment, reason about goals, take actions, and learn from results.",
     visualType: "mermaid",
@@ -871,7 +839,7 @@ if (response.stop_reason === "tool_use") {
     type: "mermaid_split"
   },
   {
-    id: 58,
+    id: 56,
     title: "Agent Architecture",
     content: "The internal components that power an agent system.",
     visualType: "mermaid",
@@ -911,7 +879,7 @@ if (response.stop_reason === "tool_use") {
 
   // --- MODULE 7A: AGENTIC LOOPS ---
   {
-    id: 59,
+    id: 57,
     title: "Module 7A: Agentic Loops",
     subtitle: "Reasoning",
     content: "How agents execute complex tasks.",
@@ -920,7 +888,7 @@ if (response.stop_reason === "tool_use") {
     type: "title"
   },
   {
-    id: 60,
+    id: 58,
     title: "The Core Loop",
     content: "The fundamental cycle that powers all agentic systems: perceive the environment, reason about next steps, take action, and repeat.",
     visualType: "mermaid",
@@ -946,7 +914,7 @@ if (response.stop_reason === "tool_use") {
     type: "mermaid_split"
   },
   {
-    id: 61,
+    id: 59,
     title: "ReAct Pattern",
     content: "Reasoning + Acting. The agent alternates between thinking (reasoning) and doing (acting with tools) until it reaches a solution.",
     code: `// "What's the weather in San Francisco?"
@@ -968,7 +936,7 @@ while (!done) {
     type: "code_split"
   },
   {
-    id: 62,
+    id: 60,
     title: "Planning Pattern: Plan-Execute",
     content: "Create a complete plan upfront, then execute each step sequentially.",
     code: `// Step 1: Create the plan
@@ -992,7 +960,7 @@ for (const step of plan.steps) {
     type: "code_split"
   },
   {
-    id: 63,
+    id: 61,
     title: "Planning Pattern: Reflexion",
     content: "Try an approach, evaluate the result, learn from mistakes, and retry with improvements.",
     code: `let attempt = 0;
@@ -1019,7 +987,7 @@ while (attempt < maxAttempts) {
     type: "code_split"
   },
   {
-    id: 64,
+    id: 62,
     title: "Planning Pattern: Tree of Thoughts",
     content: "Explore multiple solution paths in parallel, evaluate each, and choose the best one.",
     code: `// Generate multiple approaches
@@ -1045,7 +1013,7 @@ return best.solution;`,
     type: "code_split"
   },
   {
-    id: 65,
+    id: 63,
     title: "Controlling Behavior",
     content: "Keeping agents in check.",
     items: [
@@ -1057,7 +1025,7 @@ return best.solution;`,
     type: "cards"
   },
   {
-    id: 66,
+    id: 64,
     title: "Frameworks",
     content: "Don't build from scratch if you don't have to.",
     items: [
@@ -1074,7 +1042,7 @@ return best.solution;`,
 
   // --- CLOSING ---
   {
-    id: 67,
+    id: 65,
     title: "Resources",
     content: "Bookmark these.",
     items: [
@@ -1088,7 +1056,7 @@ return best.solution;`,
     type: "list"
   },
   {
-    id: 68,
+    id: 66,
     title: "Summary",
     content: "The Gen AI Stack.",
     items: [
@@ -1101,7 +1069,7 @@ return best.solution;`,
     type: "list"
   },
   {
-    id: 69,
+    id: 67,
     title: "Let's Build!",
     subtitle: "Good Luck",
     content: "Go build something amazing.",
