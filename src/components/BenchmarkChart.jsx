@@ -1,5 +1,10 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
 
 const modelColors = {
   'Claude Opus 4.5': '#CC785C',    // Anthropic brand orange/terracotta
@@ -13,57 +18,70 @@ const modelColors = {
 export const BenchmarkChart = ({ data }) => {
   // Transform data for Recharts
   const chartData = data.map(item => ({
-    name: item.model,
+    model: item.model,
     score: parseFloat(item.score),
-    color: modelColors[item.model] || '#94a3b8'
   }));
 
-  const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="bg-white px-4 py-2 rounded-lg shadow-xl border border-gray-200">
-          <p className="text-sm font-bold text-gray-900">{payload[0].payload.name}</p>
-          <p className="text-sm text-gray-600">{payload[0].value}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
+  // Create chart config for shadcn
+  const chartConfig = data.reduce((acc, item) => {
+    acc[item.model] = {
+      label: item.model,
+      color: modelColors[item.model] || '#94a3b8'
+    };
+    return acc;
+  }, {});
 
   return (
     <div className="w-full h-full p-8">
-      <ResponsiveContainer width="100%" height="100%">
+      <ChartContainer config={chartConfig} className="h-full w-full">
         <BarChart
           data={chartData}
           margin={{ top: 20, right: 30, left: 20, bottom: 80 }}
-          barGap={8}
         >
-          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+          <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" vertical={false} />
           <XAxis
-            dataKey="name"
+            dataKey="model"
             angle={-45}
             textAnchor="end"
             height={100}
             interval={0}
             tick={{ fill: '#475569', fontSize: 13, fontWeight: 500 }}
+            tickLine={false}
+            axisLine={false}
           />
           <YAxis
             domain={[0, 100]}
             tick={{ fill: '#475569', fontSize: 13 }}
-            label={{ value: 'Score (%)', angle: -90, position: 'insideLeft', fill: '#475569', fontSize: 14, fontWeight: 600 }}
+            tickLine={false}
+            axisLine={false}
+            label={{
+              value: 'Score (%)',
+              angle: -90,
+              position: 'insideLeft',
+              fill: '#475569',
+              fontSize: 14,
+              fontWeight: 600
+            }}
           />
-          <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(0, 0, 0, 0.05)' }} />
+          <ChartTooltip
+            content={<ChartTooltipContent />}
+            cursor={{ fill: 'rgba(0, 0, 0, 0.05)' }}
+          />
           <Bar
             dataKey="score"
             radius={[8, 8, 0, 0]}
             maxBarSize={80}
+            fill="currentColor"
           >
             {chartData.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
+              <rect
+                key={`bar-${index}`}
+                fill={modelColors[entry.model]}
+              />
             ))}
           </Bar>
         </BarChart>
-      </ResponsiveContainer>
+      </ChartContainer>
     </div>
   );
 };
