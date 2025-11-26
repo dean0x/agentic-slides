@@ -60,8 +60,11 @@ export const BenchmarkChart = ({ data }) => {
           <XAxis
             dataKey="score"
             type="number"
-            hide
             domain={[0, 100]}
+            tickLine={false}
+            axisLine={false}
+            tick={{ fill: '#64748b', fontSize: 12 }}
+            tickFormatter={(value) => `${value}%`}
           />
           <ChartTooltip
             cursor={false}
