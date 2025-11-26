@@ -69,6 +69,7 @@ export const slides = [
   {
     id: 5,
     title: "What are LLMs?",
+    subtitle: "Foundations",
     content: "At their core, they are pattern recognition engines trained on internet-scale text.",
     items: [
       { title: "Training", text: "Learns from massive datasets to understand language structure." },
@@ -81,6 +82,7 @@ export const slides = [
   {
     id: 6,
     title: "Key Concepts",
+    subtitle: "Foundations",
     content: "The vocabulary you need to know.",
     items: [
       { title: "Tokens", text: "~4 chars. The atomic unit of text.", icon: Layers },
@@ -95,6 +97,7 @@ export const slides = [
   {
     id: 7,
     title: "Model Landscape",
+    subtitle: "Foundations",
     content: "Choosing the right tool for the job.",
     items: [
       { title: "Anthropic", text: "Claude 4.5 Opus. Best for coding & reasoning tasks.", icon: Brain, color: "text-orange-400" },
@@ -109,7 +112,7 @@ export const slides = [
   {
     id: 8,
     title: "SWE-bench Verified",
-    subtitle: "Benchmark Comparison",
+    subtitle: "Foundations",
     content: "Real-world GitHub issue resolution. Measures coding agent capabilities on 500 validated tasks.",
     benchmarkData: [
       { model: "Claude Opus 4.5", score: "80.9" },
@@ -125,7 +128,7 @@ export const slides = [
   {
     id: 9,
     title: "AIME 2025",
-    subtitle: "Benchmark Comparison",
+    subtitle: "Foundations",
     content: "Advanced math reasoning. American Invitational Mathematics Examination problems.",
     benchmarkData: [
       { model: "Qwen3-Max", score: "100" },
@@ -141,7 +144,7 @@ export const slides = [
   {
     id: 10,
     title: "GPQA Diamond",
-    subtitle: "Benchmark Comparison",
+    subtitle: "Foundations",
     content: "PhD-level reasoning across physics, chemistry, and biology. Graduate-level science questions.",
     benchmarkData: [
       { model: "Gemini 3 Pro", score: "91.9" },
@@ -157,7 +160,7 @@ export const slides = [
   {
     id: 11,
     title: "MMLU-Pro",
-    subtitle: "Benchmark Comparison",
+    subtitle: "Foundations",
     content: "Multi-domain knowledge across 57 subjects. Tests comprehensive understanding from STEM to humanities.",
     benchmarkData: [
       { model: "GPT-5.1", score: "90.1" },
@@ -173,7 +176,7 @@ export const slides = [
   {
     id: 12,
     title: "ARC-AGI-2",
-    subtitle: "Benchmark Comparison",
+    subtitle: "Foundations",
     content: "Abstract reasoning and pattern recognition. Tests ability to solve novel visual reasoning puzzles.",
     benchmarkData: [
       { model: "Gemini 3 Pro", score: "31.1" },
@@ -200,6 +203,7 @@ export const slides = [
   {
     id: 14,
     title: "Core Principles",
+    subtitle: "Prompt Engineering",
     content: "\"Most prompt failures come from ambiguity, not model limitations.\"",
     items: [
       { title: "Be Specific", text: "Vague instructions yield vague results." },
@@ -211,6 +215,7 @@ export const slides = [
   {
     id: 15,
     title: "Technique 1: Context & Constraints",
+    subtitle: "Prompt Engineering",
     content: "Set the stage for the model.",
     code: `You are a senior software architect reviewing code.
 The codebase uses TypeScript, Node.js, and PostgreSQL.
@@ -221,6 +226,7 @@ Focus on security vulnerabilities and performance issues.`,
   {
     id: 16,
     title: "Technique 2: Role/Persona",
+    subtitle: "Prompt Engineering",
     content: "Give the model a frame of reference.",
     items: [
       { title: "Expert", text: "You are a world-class copywriter..." },
@@ -233,6 +239,7 @@ Focus on security vulnerabilities and performance issues.`,
   {
     id: 17,
     title: "Technique 3: Few-Shot",
+    subtitle: "Prompt Engineering",
     content: "Provide examples of input -> output.",
     code: `Convert product to JSON:
 
@@ -247,6 +254,7 @@ Output:`,
   {
     id: 18,
     title: "Technique 4: Chain of Thought",
+    subtitle: "Prompt Engineering",
     content: "Ask it to 'Think step-by-step'.",
     items: [
       { title: "Reasoning", text: "Forces the model to plan before answering." },
@@ -258,6 +266,7 @@ Output:`,
   {
     id: 19,
     title: "Technique 5: Output Format",
+    subtitle: "Prompt Engineering",
     content: "Specify exactly what you want back.",
     items: [
       { title: "JSON", text: "For programmatic use." },
@@ -281,6 +290,7 @@ Output:`,
   {
     id: 21,
     title: "Why Structured Output?",
+    subtitle: "Structured Output",
     content: "When building apps, you need predictability.",
     items: [
       { title: "Type Safety", text: "Ensure data matches your schema." },
@@ -293,6 +303,7 @@ Output:`,
   {
     id: 22,
     title: "Approach 1: Prompt-Based",
+    subtitle: "Structured Output",
     content: "The basic way. Just ask for JSON.",
     code: `Respond ONLY with valid JSON:
 {
@@ -305,6 +316,7 @@ Output:`,
   {
     id: 23,
     title: "Approach 2: Native JSON Mode",
+    subtitle: "Structured Output",
     content: "Most APIs support this now.",
     code: `const response = await client.chat.completions.create({
   model: "gpt-4o",
@@ -317,6 +329,7 @@ Output:`,
   {
     id: 24,
     title: "Approach 3: Schema-Enforced",
+    subtitle: "Structured Output",
     content: "The best way. Define a schema.",
     code: `interface Sentiment {
   sentiment: "positive" | "negative";
@@ -333,6 +346,7 @@ const response = await client.beta.chat.completions.parse({
   {
     id: 25,
     title: "Zod Validation",
+    subtitle: "Structured Output",
     content: "Validate the data after you get it.",
     code: `import { z } from 'zod';
 
@@ -351,6 +365,7 @@ type ProductReview = z.infer<typeof ProductReviewSchema>;`,
   {
     id: 26,
     title: "Best Practice: Validation",
+    subtitle: "Structured Output",
     content: "Always validate LLM output before using it in your application.",
     code: `import { z } from 'zod';
 
@@ -376,6 +391,7 @@ console.log(result.sentiment); // Type-safe access`,
   {
     id: 27,
     title: "Best Practice: Error Handling",
+    subtitle: "Structured Output",
     content: "Handle API errors and invalid responses gracefully with fallbacks.",
     code: `async function callLLM(prompt: string, retries = 3) {
   for (let i = 0; i < retries; i++) {
@@ -403,6 +419,7 @@ console.log(result.sentiment); // Type-safe access`,
   {
     id: 28,
     title: "Best Practice: Constraints",
+    subtitle: "Structured Output",
     content: "Set explicit constraints on output length and structure.",
     code: `const ProductSchema = z.object({
   name: z.string().min(1).max(100),
@@ -430,6 +447,7 @@ const response = await client.messages.create({
   {
     id: 29,
     title: "Advanced Pattern: Prompt Chaining",
+    subtitle: "Structured Output",
     content: "Break complex tasks into sequential steps where each output feeds the next.",
     code: `// Step 1: Research
 const research = await client.messages.create({
@@ -458,6 +476,7 @@ const draft = await client.messages.create({
   {
     id: 30,
     title: "Layered Prompting",
+    subtitle: "Structured Output",
     content: "Combine multiple techniques in a single prompt for maximum effectiveness.",
     code: `const userFeedback = "The checkout is too slow...";
 
@@ -501,6 +520,7 @@ Feedback: "\${userFeedback}"\`
   {
     id: 32,
     title: "API Basics",
+    subtitle: "Working with APIs",
     content: "Simple, stateless HTTP requests.",
     code: `import Anthropic from '@anthropic-ai/sdk';
 
@@ -521,6 +541,7 @@ console.log(message.content[0].text);`,
   {
     id: 33,
     title: "Key Parameters",
+    subtitle: "Working with APIs",
     content: "Tuning the response.",
     items: [
       { title: "model", text: "Which model to use (e.g. gpt-4o, claude-3.5-sonnet)." },
@@ -535,6 +556,7 @@ console.log(message.content[0].text);`,
   {
     id: 34,
     title: "Streaming vs Non-Streaming",
+    subtitle: "Working with APIs",
     content: "Improving User Experience.",
     items: [
       { title: "Non-Streaming", text: "Wait for the full response. Good for backend jobs." },
@@ -546,6 +568,7 @@ console.log(message.content[0].text);`,
   {
     id: 35,
     title: "Production Concerns",
+    subtitle: "Working with APIs",
     content: "Things to watch out for.",
     items: [
       { title: "Rate Limits", text: "Handle 429 errors with backoff." },
@@ -569,6 +592,7 @@ console.log(message.content[0].text);`,
   {
     id: 37,
     title: "Why RAG?",
+    subtitle: "RAG",
     content: "Overcoming LLM limitations.",
     items: [
       { title: "Knowledge Cutoff", text: "LLMs don't know current events." },
@@ -581,6 +605,7 @@ console.log(message.content[0].text);`,
   {
     id: 38,
     title: "RAG Architecture",
+    subtitle: "RAG",
     content: "The flow of data from document to answer.",
     visualType: "mermaid",
     visualContent: `graph TD
@@ -598,6 +623,7 @@ console.log(message.content[0].text);`,
   {
     id: 39,
     title: "Step 1: Chunking",
+    subtitle: "RAG",
     content: "Breaking data down.",
     items: [
       { title: "Size", text: "500-1000 tokens is typical." },
@@ -610,6 +636,7 @@ console.log(message.content[0].text);`,
   {
     id: 40,
     title: "Step 2: Embedding",
+    subtitle: "RAG",
     content: "Text to Numbers.",
     items: [
       { title: "Vectors", text: "Semantic representation of text." },
@@ -622,6 +649,7 @@ console.log(message.content[0].text);`,
   {
     id: 41,
     title: "Step 3: Vector Databases",
+    subtitle: "RAG",
     content: "Where to store your embeddings.",
     items: [
       { title: "Pinecone", text: "Managed, scalable.", icon: Database },
@@ -636,6 +664,7 @@ console.log(message.content[0].text);`,
   {
     id: 42,
     title: "Step 4 & 5: Retrieval & Generation",
+    subtitle: "RAG",
     content: "The Query Loop.",
     items: [
       { title: "Query", text: "Embed user question." },
@@ -649,6 +678,7 @@ console.log(message.content[0].text);`,
   {
     id: 43,
     title: "RAG Best Practices (2025)",
+    subtitle: "RAG",
     content: "Optimizing for quality.",
     items: [
       { title: "Hybrid Search", text: "Combine Semantic (Vector) + Keyword (BM25)." },
@@ -662,6 +692,7 @@ console.log(message.content[0].text);`,
   {
     id: 44,
     title: "Advanced RAG Variants",
+    subtitle: "RAG",
     content: "For complex use cases.",
     items: [
       { title: "GraphRAG", text: "Uses knowledge graphs for complex relationships." },
@@ -686,6 +717,7 @@ console.log(message.content[0].text);`,
   {
     id: 46,
     title: "What is Tool Use?",
+    subtitle: "Tool Use",
     content: "Giving LLMs hands.",
     items: [
       { title: "Search", text: "Browse the web." },
@@ -699,6 +731,7 @@ console.log(message.content[0].text);`,
   {
     id: 47,
     title: "How It Works",
+    subtitle: "Tool Use",
     content: "The model decides when to call a function.",
     code: `{
   "name": "get_weather",
@@ -716,6 +749,7 @@ console.log(message.content[0].text);`,
   {
     id: 48,
     title: "Tool Call in Action",
+    subtitle: "Tool Use",
     content: "Calling Claude with tools and executing them when requested.",
     code: `const response = await client.messages.create({
   model: "claude-3-5-sonnet-20240620",
@@ -735,6 +769,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 49,
     title: "Common Patterns",
+    subtitle: "Tool Use",
     content: "What can you do with tools?",
     items: [
       { title: "Web Search", text: "Get real-time info.", icon: Search },
@@ -759,6 +794,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 51,
     title: "Why MCP?",
+    subtitle: "MCP",
     content: "Standardized connection between AI and data.",
     items: [
       { title: "Universal", text: "Write once, use with any client." },
@@ -771,6 +807,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 52,
     title: "MCP Architecture",
+    subtitle: "MCP",
     content: "Client-Server protocol connecting AI applications to data sources and tools.",
     visualType: "mermaid",
     visualContent: `graph LR
@@ -799,6 +836,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 53,
     title: "MCP Primitives",
+    subtitle: "MCP",
     content: "What can MCP do?",
     items: [
       { title: "Tools", text: "Functions the model can call.", icon: Zap },
@@ -811,6 +849,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 54,
     title: "Pre-built Servers",
+    subtitle: "MCP",
     content: "Ready to use integrations.",
     items: [
       { title: "Filesystem", text: "Read/Write local files." },
@@ -825,6 +864,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 55,
     title: "Getting Started",
+    subtitle: "MCP",
     content: "How to use MCP.",
     items: [
       { title: "Claude Desktop", text: "Enable MCP in settings." },
@@ -849,6 +889,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 57,
     title: "What are Agents?",
+    subtitle: "Agents",
     content: "Beyond simple chatbots. Agents are autonomous systems that perceive their environment, reason about goals, take actions, and learn from results.",
     visualType: "mermaid",
     visualContent: `graph TB
@@ -873,6 +914,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 58,
     title: "Agent Architecture",
+    subtitle: "Agents",
     content: "The internal components that power an agent system.",
     visualType: "mermaid",
     visualContent: `graph TB
@@ -922,6 +964,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 60,
     title: "The Core Loop",
+    subtitle: "Agentic Loops",
     content: "The fundamental cycle that powers all agentic systems: perceive the environment, reason about next steps, take action, and repeat.",
     visualType: "mermaid",
     visualContent: `graph TD
@@ -948,6 +991,7 @@ if (response.stop_reason === "tool_use") {
   {
     id: 61,
     title: "ReAct Pattern",
+    subtitle: "Agentic Loops",
     content: "Reasoning + Acting. The agent alternates between thinking (reasoning) and doing (acting with tools) until it reaches a solution.",
     code: `// "What's the weather in San Francisco?"
 
@@ -970,6 +1014,7 @@ while (!done) {
   {
     id: 62,
     title: "Planning Pattern: Plan-Execute",
+    subtitle: "Agentic Loops",
     content: "Create a complete plan upfront, then execute each step sequentially.",
     code: `// Step 1: Create the plan
 const plan = await callClaude(\`Create a step-by-step plan
@@ -994,6 +1039,7 @@ for (const step of plan.steps) {
   {
     id: 63,
     title: "Planning Pattern: Reflexion",
+    subtitle: "Agentic Loops",
     content: "Try an approach, evaluate the result, learn from mistakes, and retry with improvements.",
     code: `let attempt = 0;
 let maxAttempts = 3;
@@ -1021,6 +1067,7 @@ while (attempt < maxAttempts) {
   {
     id: 64,
     title: "Planning Pattern: Tree of Thoughts",
+    subtitle: "Agentic Loops",
     content: "Explore multiple solution paths in parallel, evaluate each, and choose the best one.",
     code: `// Generate multiple approaches
 const approaches = await callClaude(\`Generate 3 different
@@ -1047,6 +1094,7 @@ return best.solution;`,
   {
     id: 65,
     title: "Controlling Behavior",
+    subtitle: "Agentic Loops",
     content: "Keeping agents in check.",
     items: [
       { title: "Loops", text: "Set max iterations." },
@@ -1059,14 +1107,13 @@ return best.solution;`,
   {
     id: 66,
     title: "Frameworks",
+    subtitle: "Agentic Loops",
     content: "Don't build from scratch if you don't have to.",
     items: [
       { title: "LangChain", text: "General LLM apps. Modular." },
       { title: "LangGraph", text: "Complex, stateful workflows." },
       { title: "CrewAI", text: "Multi-agent teams." },
-      { title: "AutoGen", text: "Multi-agent conversations." },
       { title: "OpenAI Agents SDK", text: "OpenAI-native." },
-      { title: "Smolagents", text: "Lightweight." },
     ],
     icon: Layers,
     type: "cards"
