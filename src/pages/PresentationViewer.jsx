@@ -196,31 +196,25 @@ function NavigationOverlay({ currentIndex, totalSlides, onPrev, onNext, onGoTo, 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: showControls ? 1 : 0, y: showControls ? 0 : 20 }}
         transition={{ duration: 0.2 }}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
+        className="fixed bottom-6 left-0 right-0 flex justify-center z-50"
       >
         <div className="bg-white/95 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg flex items-center gap-2">
           {/* Mini slide dots */}
           <div className="flex items-center gap-1">
-            {Array.from({ length: Math.min(totalSlides, 20) }).map((_, i) => {
-              const slideIndex = totalSlides > 20
-                ? Math.round((i / 19) * (totalSlides - 1))
-                : i;
-
-              return (
-                <button
-                  key={i}
-                  onClick={() => onGoTo(slideIndex)}
-                  className={`w-2 h-2 rounded-full transition-all ${
-                    slideIndex === currentIndex
-                      ? 'bg-primary w-4'
-                      : slideIndex < currentIndex
-                      ? 'bg-primary/40'
-                      : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to slide ${slideIndex + 1}`}
-                />
-              );
-            })}
+            {Array.from({ length: totalSlides }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => onGoTo(i)}
+                className={`h-1.5 rounded-full transition-all ${
+                  i === currentIndex
+                    ? 'bg-primary w-3'
+                    : i < currentIndex
+                    ? 'bg-primary/40 w-1.5'
+                    : 'bg-gray-300 w-1.5'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
 
           <div className="w-px h-4 bg-gray-200 mx-2"></div>

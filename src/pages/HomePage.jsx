@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { presentations, getAllTags } from '@/presentations/registry';
-import { Play, Calendar, User, Presentation, Search } from 'lucide-react';
+import { Play, Calendar, User, Search } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -46,19 +46,14 @@ export function HomePage() {
     <div className="min-h-screen bg-[#F5F5F7]">
       {/* Header */}
       <header className="bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="max-w-7xl mx-auto px-6 py-4">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex items-center gap-4"
           >
-            <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-              <Presentation className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-text">Presentations</h1>
-              <p className="text-secondary">Select a presentation to begin</p>
-            </div>
+            <h1 className="text-xl font-semibold text-text tracking-tight">
+              Agentic<span className="text-primary">Slides</span>
+            </h1>
           </motion.div>
         </div>
       </header>
@@ -88,7 +83,7 @@ export function HomePage() {
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => setSelectedTag(null)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                className={`px-4 py-1 rounded-full text-sm font-medium transition-all ${
                   !selectedTag
                     ? 'bg-primary text-white'
                     : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
@@ -100,7 +95,7 @@ export function HomePage() {
                 <button
                   key={tag}
                   onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  className={`px-4 py-1 rounded-full text-sm font-medium transition-all ${
                     selectedTag === tag
                       ? 'bg-primary text-white'
                       : 'bg-white text-secondary hover:bg-gray-50 border border-gray-200'
@@ -144,7 +139,12 @@ export function HomePage() {
       {/* Footer */}
       <footer className="border-t border-gray-200 bg-white mt-auto">
         <div className="max-w-7xl mx-auto px-6 py-6 text-center text-secondary text-sm">
-          <p>Slideshow Template - Create beautiful presentations</p>
+          <p>
+            <span className="font-semibold text-text">Agentic</span>
+            <span className="font-semibold text-primary">Slides</span>
+            <span className="mx-2">·</span>
+            Create beautiful presentations
+          </p>
         </div>
       </footer>
     </div>
