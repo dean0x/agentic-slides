@@ -28,3 +28,6 @@ coverage/
 # Misc
 .cache/
 .playwright-mcp/
+
+# Documentation (auto-generated)
+.docs/
