@@ -1,12 +1,13 @@
 # Status Document Index
 
 ## Quick Reference
-- Latest session: 2025-11-28 11:15
+- Latest session: 2025-11-28 20:34
 
 ## Recent Status Reports
 
 | Date | Time | Focus | Full | Compact |
 |------|------|-------|------|---------|
+| 2025-11-28 | 20:34 | Code review of multi-presentation refactor | [Full](./2025-11-28_2034.md) | [Quick](./compact/2025-11-28_2034.md) |
 | 2025-11-28 | 11:15 | Multi-presentation template refactor | [Full](./2025-11-28_1115.md) | [Quick](./compact/2025-11-28_1115.md) |
 
 ## Usage
