@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import mermaid from 'mermaid';
 import { visualPanelVariants } from './SlideAnimations';
+import { MermaidDiagram } from './MermaidDiagram';
 
 /**
  * Visual panel for displaying images, mermaid diagrams, or code
@@ -21,54 +21,6 @@ export function VisualPanel({
   title = '',
   mermaidTheme
 }) {
-  const mermaidRef = useRef(null);
-
-  useEffect(() => {
-    if (visualType === 'mermaid' && mermaidRef.current) {
-      const defaultTheme = {
-        primaryColor: '#e0e7ff',
-        primaryTextColor: '#1e293b',
-        primaryBorderColor: '#818cf8',
-        lineColor: '#64748b',
-        secondaryColor: '#f1f5f9',
-        tertiaryColor: '#ffffff',
-        fontSize: '13px'
-      };
-
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: 'base',
-        themeVariables: { ...defaultTheme, ...mermaidTheme },
-        flowchart: {
-          useMaxWidth: true,
-          htmlLabels: false,
-          curve: 'basis',
-          padding: 20,
-          nodeSpacing: 50,
-          rankSpacing: 50
-        },
-        graph: {
-          useMaxWidth: true,
-          htmlLabels: false
-        }
-      });
-
-      // Render mermaid diagram
-      const renderMermaid = async () => {
-        try {
-          const { svg } = await mermaid.render(`mermaid-${slideId}`, visualContent);
-          if (mermaidRef.current) {
-            mermaidRef.current.innerHTML = svg;
-          }
-        } catch (err) {
-          console.error('Mermaid rendering error:', err);
-        }
-      };
-
-      renderMermaid();
-    }
-  }, [slideId, visualType, visualContent, mermaidTheme]);
-
   return (
     <motion.div
       initial="hidden"
@@ -78,13 +30,11 @@ export function VisualPanel({
       key={`visual-${slideId}`}
     >
       {visualType === 'mermaid' ? (
-        <div className="w-full h-full flex items-center justify-center p-8">
-          <div
-            ref={mermaidRef}
-            className="w-full h-full flex justify-center items-center"
-            style={{ transform: 'scale(0.95)', maxHeight: '100%' }}
-          />
-        </div>
+        <MermaidDiagram
+          slideId={slideId}
+          content={visualContent}
+          theme={mermaidTheme}
+        />
       ) : visualType === 'code' ? (
         <div className="w-full h-full flex items-center justify-center p-12">
           <div className="w-full bg-[#1e1e1e] p-6 rounded-2xl shadow-xl font-mono text-xs xl:text-sm text-white overflow-hidden border border-gray-800 text-left relative">

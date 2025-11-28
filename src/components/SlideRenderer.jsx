@@ -1,6 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import mermaid from 'mermaid';
 import { BenchmarkChart } from './BenchmarkChart';
 import {
   containerVariants,
@@ -8,7 +7,8 @@ import {
   SlideHeader,
   SlideContent,
   VisualPanel,
-  CodeBlock
+  CodeBlock,
+  MermaidDiagram
 } from './layouts';
 import { usePresentation } from '@/context/PresentationContext';
 
@@ -35,45 +35,8 @@ function getLayoutType(slide) {
  */
 export function SlideRenderer({ slide, currentIndex, totalSlides, defaultSubtitle }) {
   const { theme } = usePresentation();
-  const mermaidRef = useRef(null);
 
   const layout = getLayoutType(slide);
-
-  // Initialize mermaid for split layout
-  useEffect(() => {
-    if (layout === 'mermaid_split' && mermaidRef.current && slide.visualContent) {
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: 'base',
-        themeVariables: theme.mermaid,
-        flowchart: {
-          useMaxWidth: true,
-          htmlLabels: false,
-          curve: 'basis',
-          padding: 20,
-          nodeSpacing: 50,
-          rankSpacing: 50
-        },
-        graph: {
-          useMaxWidth: true,
-          htmlLabels: false
-        }
-      });
-
-      const renderMermaid = async () => {
-        try {
-          const { svg } = await mermaid.render(`mermaid-split-${slide.id}`, slide.visualContent);
-          if (mermaidRef.current) {
-            mermaidRef.current.innerHTML = svg;
-          }
-        } catch (err) {
-          console.error('Mermaid rendering error:', err);
-        }
-      };
-
-      renderMermaid();
-    }
-  }, [slide.id, slide.visualContent, layout, theme.mermaid]);
 
   return (
     <div className="h-screen w-full bg-[#F5F5F7] text-text overflow-hidden flex items-center justify-center p-6 xl:p-12">
@@ -236,13 +199,11 @@ export function SlideRenderer({ slide, currentIndex, totalSlides, defaultSubtitl
                 animate="show"
                 key={`mermaid-${slide.id}`}
               >
-                <div className="w-full h-full flex items-center justify-center p-8">
-                  <div
-                    ref={mermaidRef}
-                    className="w-full h-full flex justify-center items-center"
-                    style={{ transform: 'scale(0.95)', maxHeight: '100%' }}
-                  />
-                </div>
+                <MermaidDiagram
+                  slideId={`split-${slide.id}`}
+                  content={slide.visualContent}
+                  theme={theme.mermaid}
+                />
               </motion.div>
             </div>
           </>

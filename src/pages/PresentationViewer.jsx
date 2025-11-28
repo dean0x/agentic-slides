@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { findPresentation } from '@/presentations/registry';
 import { usePresentation, usePresentationKeyboard } from '@/context/PresentationContext';
@@ -8,7 +8,6 @@ import { Home, ChevronLeft, ChevronRight, Loader2, AlertCircle } from 'lucide-re
 
 export function PresentationViewer() {
   const { id } = useParams();
-  const navigate = useNavigate();
   const [loadError, setLoadError] = useState(null);
 
   const {

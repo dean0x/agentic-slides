@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { presentations, getAllTags } from '@/presentations/registry';
-import { Play, Tag, Calendar, User, Presentation, Search } from 'lucide-react';
+import { Play, Calendar, User, Presentation, Search } from 'lucide-react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
