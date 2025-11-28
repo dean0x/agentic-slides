@@ -31,7 +31,7 @@ export const presentations = [
     author: 'Education Team',
     date: '2025',
     tags: ['ai', 'llm', 'rag', 'agents', 'mcp', 'hackathon'],
-    thumbnail: '/presentations/gen-ai-hackathon/thumbnail.jpg',
+    thumbnail: '/presentations/gen-ai-hackathon/assets/intro_slide.jpg',
     loader: () => import('./gen-ai-hackathon/slides.json')
   }
 ];
