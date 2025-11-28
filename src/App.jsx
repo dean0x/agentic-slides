@@ -1,31 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { Slide } from './components/Slide';
-import { slides } from './data/slides';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { PresentationProvider } from '@/context/PresentationContext';
+import { HomePage } from '@/pages/HomePage';
+import { PresentationViewer } from '@/pages/PresentationViewer';
 
 function App() {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'ArrowRight' || e.key === 'Space') {
-        setCurrentSlideIndex((prev) => Math.min(prev + 1, slides.length - 1));
-      } else if (e.key === 'ArrowLeft') {
-        setCurrentSlideIndex((prev) => Math.max(prev - 1, 0));
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   return (
-    <div className="bg-background min-h-screen text-white">
-      <Slide 
-        slide={slides[currentSlideIndex]} 
-        currentSlideIndex={currentSlideIndex} 
-        totalSlides={slides.length} 
-      />
-    </div>
+    <BrowserRouter>
+      <PresentationProvider>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/presentation/:id" element={<PresentationViewer />} />
+          {/* Fallback redirect */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </PresentationProvider>
+    </BrowserRouter>
   );
 }
 
