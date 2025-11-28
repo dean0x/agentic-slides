@@ -6,7 +6,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 
-const modelColors = {
+// Default colors - can be overridden via colorMap prop
+const defaultModelColors = {
   'Claude Opus 4.5': '#CC785C',    // Anthropic brand orange/terracotta
   'Gemini 3 Pro': '#4285F4',       // Google blue
   'GPT-5.1': '#10A37F',            // OpenAI teal/green
@@ -15,12 +16,20 @@ const modelColors = {
   'Kimi K2': '#7C3AED'             // Moonshot purple
 };
 
-export const BenchmarkChart = ({ data }) => {
+/**
+ * @param {Object} props
+ * @param {Array<{model: string, score: string | number, color?: string}>} props.data - Benchmark data
+ * @param {Object<string, string>} [props.colorMap] - Custom color mapping by model name
+ */
+export const BenchmarkChart = ({ data, colorMap = {} }) => {
+  // Merge custom colors with defaults
+  const modelColors = { ...defaultModelColors, ...colorMap };
   // Transform data for Recharts
+  // Priority: item.color > colorMap[model] > defaultModelColors[model] > fallback
   const chartData = data.map(item => ({
     model: item.model,
     score: parseFloat(item.score),
-    fill: modelColors[item.model] || '#94a3b8'
+    fill: item.color || modelColors[item.model] || '#94a3b8'
   }));
 
   // Create chart config for shadcn

@@ -1,0 +1,824 @@
+{
+  "meta": {
+    "id": "gen-ai-hackathon",
+    "title": "Gen AI Hackathon Education Session",
+    "subtitle": "Curriculum",
+    "description": "Equipping you with the knowledge and tools to succeed in the Gen AI Hackathon.",
+    "author": "Education Team",
+    "date": "2025",
+    "tags": ["ai", "llm", "rag", "agents", "mcp", "hackathon"]
+  },
+  "theme": {
+    "benchmarkColors": {
+      "Claude Opus 4.5": "#CC785C",
+      "Gemini 3 Pro": "#4285F4",
+      "GPT-5.1": "#10A37F",
+      "Qwen3-Max": "#FF6A00",
+      "DeepSeek R1": "#0066FF",
+      "Kimi K2": "#7C3AED"
+    }
+  },
+  "slides": [
+    {
+      "id": 1,
+      "title": "Gen AI Hackathon Education Session",
+      "subtitle": "Curriculum",
+      "content": "Equipping you with the knowledge and tools to succeed in the Gen AI Hackathon.",
+      "image": "intro_slide.jpg",
+      "icon": "Rocket",
+      "type": "title"
+    },
+    {
+      "id": 2,
+      "title": "Session Overview",
+      "subtitle": "Agenda",
+      "content": "What we will cover today (~2 hours).",
+      "items": [
+        { "title": "1. Foundations", "text": "Understanding LLMs" },
+        { "title": "2. Prompt Engineering", "text": "Communication & Structured Output" },
+        { "title": "3. APIs & Tools", "text": "Integration & Function Calling" },
+        { "title": "4. RAG", "text": "Retrieval Augmented Generation" },
+        { "title": "5. Agents", "text": "MCP & Agentic Loops" }
+      ],
+      "icon": "BookOpen",
+      "type": "list"
+    },
+    {
+      "id": 3,
+      "title": "The AI Moment",
+      "subtitle": "Why We Are Here",
+      "content": "AI is reshaping software development at an unprecedented pace.",
+      "items": [
+        { "title": "85%", "text": "Developers regularly use AI tools for coding (JetBrains 2025)", "icon": "Code", "color": "text-blue-400" },
+        { "title": "41%", "text": "Code in 2025 is AI-generated or AI-assisted (Industry Reports)", "icon": "Code", "color": "text-purple-400" },
+        { "title": "25%", "text": "Of Google's code is now AI-assisted (Sundar Pichai)", "icon": "Activity", "color": "text-orange-400" },
+        { "title": "23%", "text": "Enterprises scaling agentic AI, 39% experimenting (McKinsey 2025)", "icon": "Rocket", "color": "text-cyan-400" }
+      ],
+      "icon": "Activity",
+      "type": "cards"
+    },
+    {
+      "id": 4,
+      "title": "Module 1: Foundations",
+      "subtitle": "Understanding LLMs",
+      "content": "Level-setting on how Large Language Models actually work.",
+      "image": "user_foundations.jpg",
+      "icon": "Brain",
+      "type": "title"
+    },
+    {
+      "id": 5,
+      "title": "What are LLMs?",
+      "subtitle": "Foundations",
+      "content": "At their core, they are pattern recognition engines trained on internet-scale text.",
+      "items": [
+        { "title": "Training", "text": "Learns from massive datasets to understand language structure." },
+        { "title": "Prediction", "text": "Predicts the next token based on context." },
+        { "title": "Stochastic", "text": "The same prompt can yield different outputs." }
+      ],
+      "icon": "Brain",
+      "type": "list"
+    },
+    {
+      "id": 6,
+      "title": "Key Concepts",
+      "subtitle": "Foundations",
+      "content": "The vocabulary you need to know.",
+      "items": [
+        { "title": "Tokens", "text": "~4 chars. The atomic unit of text.", "icon": "Layers" },
+        { "title": "Context Window", "text": "The 'memory' limit (e.g., 128k tokens).", "icon": "Layers" },
+        { "title": "Temperature", "text": "Creativity setting (0 = precise, 1 = creative).", "icon": "Activity" },
+        { "title": "Top-p", "text": "Nucleus sampling. Another way to control diversity.", "icon": "Filter" },
+        { "title": "Stochastic Nature", "text": "Non-deterministic outputs.", "icon": "Activity" }
+      ],
+      "icon": "Layers",
+      "type": "cards"
+    },
+    {
+      "id": 7,
+      "title": "Model Landscape",
+      "subtitle": "Foundations",
+      "content": "Choosing the right tool for the job.",
+      "items": [
+        { "title": "Anthropic", "text": "Claude 4.5 Opus. Best for coding & reasoning tasks.", "icon": "Brain", "color": "text-orange-400" },
+        { "title": "OpenAI", "text": "GPT-5. Multimodal powerhouse with state-of-the-art performance.", "icon": "Zap", "color": "text-green-400" },
+        { "title": "Google", "text": "Gemini 3.0 Pro. Top benchmark performer, 1M token context.", "icon": "Layers", "color": "text-blue-400" },
+        { "title": "DeepSeek", "text": "DeepSeek R1. Cost-efficient reasoning & math specialist.", "icon": "Cpu", "color": "text-purple-400" },
+        { "title": "Qwen", "text": "Qwen 3. Multilingual efficiency, 119 languages supported.", "icon": "Server", "color": "text-cyan-400" }
+      ],
+      "icon": "Cpu",
+      "type": "cards"
+    },
+    {
+      "id": 8,
+      "title": "SWE-bench Verified",
+      "subtitle": "Foundations",
+      "content": "Real-world GitHub issue resolution. Measures coding agent capabilities on 500 validated tasks.",
+      "benchmarkData": [
+        { "model": "Claude Opus 4.5", "score": "80.9" },
+        { "model": "GPT-5.1", "score": "76.3" },
+        { "model": "Gemini 3 Pro", "score": "76.2" },
+        { "model": "Qwen3-Max", "score": "69.6" },
+        { "model": "Kimi K2", "score": "65.8" },
+        { "model": "DeepSeek R1", "score": "49.2" }
+      ],
+      "icon": "Code",
+      "type": "benchmark_chart"
+    },
+    {
+      "id": 9,
+      "title": "AIME 2025",
+      "subtitle": "Foundations",
+      "content": "Advanced math reasoning. American Invitational Mathematics Examination problems.",
+      "benchmarkData": [
+        { "model": "Qwen3-Max", "score": "100" },
+        { "model": "Gemini 3 Pro", "score": "95.0" },
+        { "model": "GPT-5.1", "score": "94.0" },
+        { "model": "Kimi K2", "score": "88" },
+        { "model": "Claude Opus 4.5", "score": "87.0" },
+        { "model": "DeepSeek R1", "score": "79.8" }
+      ],
+      "icon": "Brain",
+      "type": "benchmark_chart"
+    },
+    {
+      "id": 10,
+      "title": "GPQA Diamond",
+      "subtitle": "Foundations",
+      "content": "PhD-level reasoning across physics, chemistry, and biology. Graduate-level science questions.",
+      "benchmarkData": [
+        { "model": "Gemini 3 Pro", "score": "91.9" },
+        { "model": "GPT-5.1", "score": "88.1" },
+        { "model": "Kimi K2", "score": "85" },
+        { "model": "Claude Opus 4.5", "score": "83.4" },
+        { "model": "Qwen3-Max", "score": "81.1" },
+        { "model": "DeepSeek R1", "score": "71.5" }
+      ],
+      "icon": "Brain",
+      "type": "benchmark_chart"
+    },
+    {
+      "id": 11,
+      "title": "MMLU-Pro",
+      "subtitle": "Foundations",
+      "content": "Multi-domain knowledge across 57 subjects. Tests comprehensive understanding from STEM to humanities.",
+      "benchmarkData": [
+        { "model": "GPT-5.1", "score": "90.1" },
+        { "model": "Gemini 3 Pro", "score": "89" },
+        { "model": "Claude Opus 4.5", "score": "88.5" },
+        { "model": "DeepSeek R1", "score": "84.0" },
+        { "model": "Qwen3-Max", "score": "84.4" },
+        { "model": "Kimi K2", "score": "82" }
+      ],
+      "icon": "Brain",
+      "type": "benchmark_chart"
+    },
+    {
+      "id": 12,
+      "title": "ARC-AGI-2",
+      "subtitle": "Foundations",
+      "content": "Abstract reasoning and pattern recognition. Tests ability to solve novel visual reasoning puzzles.",
+      "benchmarkData": [
+        { "model": "Gemini 3 Pro", "score": "31.1" },
+        { "model": "GPT-5.1", "score": "17.6" },
+        { "model": "Claude Opus 4.5", "score": "13.6" },
+        { "model": "Kimi K2", "score": "12" },
+        { "model": "Qwen3-Max", "score": "10" },
+        { "model": "DeepSeek R1", "score": "8" }
+      ],
+      "icon": "Brain",
+      "type": "benchmark_chart"
+    },
+    {
+      "id": 13,
+      "title": "Module 2: Prompt Engineering",
+      "subtitle": "Communication",
+      "content": "Clear structure and context matter more than clever wording.",
+      "image": "prompt_engineering_v2.jpg",
+      "icon": "MessageSquare",
+      "type": "title"
+    },
+    {
+      "id": 14,
+      "title": "Core Principles",
+      "subtitle": "Prompt Engineering",
+      "content": "\"Most prompt failures come from ambiguity, not model limitations.\"",
+      "items": [
+        { "title": "Be Specific", "text": "Vague instructions yield vague results." },
+        { "title": "Iterate", "text": "Prompting is an iterative process." }
+      ],
+      "icon": "MessageSquare",
+      "type": "list"
+    },
+    {
+      "id": 15,
+      "title": "Technique 1: Context & Constraints",
+      "subtitle": "Prompt Engineering",
+      "content": "Set the stage for the model.",
+      "code": "You are a senior software architect reviewing code.\nThe codebase uses TypeScript, Node.js, and PostgreSQL.\nFocus on security vulnerabilities and performance issues.",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 16,
+      "title": "Technique 2: Role/Persona",
+      "subtitle": "Prompt Engineering",
+      "content": "Give the model a frame of reference.",
+      "items": [
+        { "title": "Expert", "text": "You are a world-class copywriter..." },
+        { "title": "Teacher", "text": "Explain this to a 5-year-old..." },
+        { "title": "Critic", "text": "Critique this design for usability..." }
+      ],
+      "icon": "Users",
+      "type": "list"
+    },
+    {
+      "id": 17,
+      "title": "Technique 3: Few-Shot",
+      "subtitle": "Prompt Engineering",
+      "content": "Provide examples of input -> output.",
+      "code": "Convert product to JSON:\n\nInput: \"Red Nike shoes, $90\"\nOutput: {\"brand\": \"Nike\", \"color\": \"red\", \"price\": 90}\n\nInput: \"Blue Adidas cleats, $120\"\nOutput:",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 18,
+      "title": "Technique 4: Chain of Thought",
+      "subtitle": "Prompt Engineering",
+      "content": "Ask it to 'Think step-by-step'.",
+      "items": [
+        { "title": "Reasoning", "text": "Forces the model to plan before answering." },
+        { "title": "Accuracy", "text": "Dramatically improves performance on complex tasks." }
+      ],
+      "icon": "Brain",
+      "type": "list"
+    },
+    {
+      "id": 19,
+      "title": "Technique 5: Output Format",
+      "subtitle": "Prompt Engineering",
+      "content": "Specify exactly what you want back.",
+      "items": [
+        { "title": "JSON", "text": "For programmatic use." },
+        { "title": "Markdown", "text": "For readable documents." },
+        { "title": "CSV", "text": "For data processing." }
+      ],
+      "icon": "Terminal",
+      "type": "list"
+    },
+    {
+      "id": 20,
+      "title": "Module 2B: Structured Output",
+      "subtitle": "Reliability",
+      "content": "Ensuring LLM outputs are parseable for your code.",
+      "image": "structured_output_v2.jpg",
+      "icon": "Code",
+      "type": "title"
+    },
+    {
+      "id": 21,
+      "title": "Why Structured Output?",
+      "subtitle": "Structured Output",
+      "content": "When building apps, you need predictability.",
+      "items": [
+        { "title": "Type Safety", "text": "Ensure data matches your schema." },
+        { "title": "Integration", "text": "Directly use output in your code." },
+        { "title": "No Regex", "text": "Stop parsing text manually." }
+      ],
+      "icon": "Shield",
+      "type": "list"
+    },
+    {
+      "id": 22,
+      "title": "Approach 1: Prompt-Based",
+      "subtitle": "Structured Output",
+      "content": "The basic way. Just ask for JSON.",
+      "code": "Respond ONLY with valid JSON:\n{\n  \"sentiment\": \"positive\" | \"negative\",\n  \"confidence\": <float>\n}",
+      "icon": "MessageSquare",
+      "type": "code_split"
+    },
+    {
+      "id": 23,
+      "title": "Approach 2: Native JSON Mode",
+      "subtitle": "Structured Output",
+      "content": "Most APIs support this now.",
+      "code": "const response = await client.chat.completions.create({\n  model: \"gpt-4o\",\n  messages: [...],\n  response_format: { type: \"json_object\" }\n});",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 24,
+      "title": "Approach 3: Schema-Enforced",
+      "subtitle": "Structured Output",
+      "content": "The best way. Define a schema.",
+      "code": "interface Sentiment {\n  sentiment: \"positive\" | \"negative\";\n  confidence: number;\n}\n\nconst response = await client.beta.chat.completions.parse({\n  model: \"gpt-4o\",\n  response_format: { type: \"json_schema\", schema: SentimentSchema }\n});",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 25,
+      "title": "Zod Validation",
+      "subtitle": "Structured Output",
+      "content": "Validate the data after you get it.",
+      "code": "import { z } from 'zod';\n\nconst ProductReviewSchema = z.object({\n  summary: z.string().max(200),\n  tags: z.array(z.string()).max(5).refine(\n    (tags) => tags.length > 0,\n    { message: \"No tags provided\" }\n  )\n});\n\ntype ProductReview = z.infer<typeof ProductReviewSchema>;",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 26,
+      "title": "Best Practice: Validation",
+      "subtitle": "Structured Output",
+      "content": "Always validate LLM output before using it in your application.",
+      "code": "import { z } from 'zod';\n\nconst ResponseSchema = z.object({\n  sentiment: z.enum([\"positive\", \"negative\", \"neutral\"]),\n  score: z.number().min(0).max(1)\n});\n\nconst response = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{ role: \"user\", content: prompt }],\n  response_format: { type: \"json_object\" }\n});\n\n// Parse and validate\nconst json = JSON.parse(response.content[0].text);\nconst result = ResponseSchema.parse(json); // Throws if invalid\n\nconsole.log(result.sentiment); // Type-safe access",
+      "icon": "CheckCircle",
+      "type": "code_split"
+    },
+    {
+      "id": 27,
+      "title": "Best Practice: Error Handling",
+      "subtitle": "Structured Output",
+      "content": "Handle API errors and invalid responses gracefully with fallbacks.",
+      "code": "async function callLLM(prompt: string, retries = 3) {\n  for (let i = 0; i < retries; i++) {\n    try {\n      const response = await client.messages.create({\n        model: \"claude-3-5-sonnet-20240620\",\n        messages: [{ role: \"user\", content: prompt }]\n      });\n\n      return response.content[0].text;\n    } catch (error) {\n      if (error.status === 429) {\n        // Rate limit - wait and retry\n        await new Promise(r => setTimeout(r, 1000 * (i + 1)));\n      } else if (i === retries - 1) {\n        // Last retry failed - return fallback\n        return \"Service temporarily unavailable\";\n      }\n    }\n  }\n}",
+      "icon": "Shield",
+      "type": "code_split"
+    },
+    {
+      "id": 28,
+      "title": "Best Practice: Constraints",
+      "subtitle": "Structured Output",
+      "content": "Set explicit constraints on output length and structure.",
+      "code": "const ProductSchema = z.object({\n  name: z.string().min(1).max(100),\n  description: z.string().max(500),\n  tags: z.array(z.string()).max(5),\n  price: z.number().positive().max(999999)\n});\n\nconst prompt = `Extract product info. Return JSON.\nConstraints:\n- Name: 1-100 chars\n- Description: max 500 chars\n- Tags: max 5 items\n- Price: positive number under 1M\n\nProduct: \"${productText}\"`;",
+      "icon": "Lock",
+      "type": "code_split"
+    },
+    {
+      "id": 29,
+      "title": "Advanced Pattern: Prompt Chaining",
+      "subtitle": "Structured Output",
+      "content": "Break complex tasks into sequential steps where each output feeds the next.",
+      "code": "// Step 1: Research\nconst research = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{ role: \"user\", content: \"Research key features of EVs\" }]\n});\nconst researchText = research.content[0].text;\n\n// Step 2: Outline (uses research output)\nconst outline = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{ role: \"user\", content:\n    `Create outline based on: ${researchText}` }]\n});\nconst outlineText = outline.content[0].text;\n\n// Step 3: Draft (uses outline output)\nconst draft = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{ role: \"user\", content:\n    `Write blog post from: ${outlineText}` }]\n});",
+      "icon": "GitBranch",
+      "type": "code_split"
+    },
+    {
+      "id": 30,
+      "title": "Layered Prompting",
+      "subtitle": "Structured Output",
+      "content": "Combine multiple techniques in a single prompt for maximum effectiveness.",
+      "code": "const userFeedback = \"The checkout is too slow...\";\n\nconst response = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{\n    role: \"user\",\n    content: `You are a senior product manager (ROLE).\n\nAnalyze feedback and return JSON (FORMAT):\n{\n  \"sentiment\": \"positive\" | \"negative\",\n  \"priority\": \"high\" | \"medium\" | \"low\",\n  \"themes\": [\"theme1\", \"theme2\"]\n}\n\nThink step-by-step (REASONING).\n\nConstraints (CONSTRAINTS):\n- Max 3 themes\n- Priority = impact + urgency\n\nFeedback: \"${userFeedback}\"`\n  }],\n  response_format: { type: \"json_object\" }\n});",
+      "icon": "Layers",
+      "type": "code_split"
+    },
+    {
+      "id": 31,
+      "title": "Module 3: Working with APIs",
+      "subtitle": "Integration",
+      "content": "Programmatic access to intelligence.",
+      "image": "apis_v2.jpg",
+      "icon": "Terminal",
+      "type": "title"
+    },
+    {
+      "id": 32,
+      "title": "API Basics",
+      "subtitle": "Working with APIs",
+      "content": "Simple, stateless HTTP requests.",
+      "code": "import Anthropic from '@anthropic-ai/sdk';\n\nconst client = new Anthropic();\n\nconst message = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  max_tokens: 1024,\n  messages: [\n    { role: \"user\", content: \"Hello!\" }\n  ]\n});\n\nconsole.log(message.content[0].text);",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 33,
+      "title": "Key Parameters",
+      "subtitle": "Working with APIs",
+      "content": "Tuning the response.",
+      "items": [
+        { "title": "model", "text": "Which model to use (e.g. gpt-4o, claude-3.5-sonnet)." },
+        { "title": "messages", "text": "Conversation history array." },
+        { "title": "System Prompt", "text": "Instructions for behavior/persona." },
+        { "title": "Max Tokens", "text": "Limit the response length." },
+        { "title": "Temperature", "text": "Control randomness." }
+      ],
+      "icon": "Activity",
+      "type": "list"
+    },
+    {
+      "id": 34,
+      "title": "Streaming vs Non-Streaming",
+      "subtitle": "Working with APIs",
+      "content": "Improving User Experience.",
+      "items": [
+        { "title": "Non-Streaming", "text": "Wait for the full response. Good for backend jobs." },
+        { "title": "Streaming", "text": "Receive tokens as they come. Essential for chat UIs." }
+      ],
+      "icon": "Zap",
+      "type": "list"
+    },
+    {
+      "id": 35,
+      "title": "Production Concerns",
+      "subtitle": "Working with APIs",
+      "content": "Things to watch out for.",
+      "items": [
+        { "title": "Rate Limits", "text": "Handle 429 errors with backoff." },
+        { "title": "Cost", "text": "Monitor token usage." },
+        { "title": "Latency", "text": "Cache responses where possible." }
+      ],
+      "icon": "AlertTriangle",
+      "type": "cards"
+    },
+    {
+      "id": 36,
+      "title": "Module 4: RAG",
+      "subtitle": "Retrieval Augmented Generation",
+      "content": "Giving LLMs access to your custom data.",
+      "image": "rag-module.jpg",
+      "icon": "Search",
+      "type": "title"
+    },
+    {
+      "id": 37,
+      "title": "Why RAG?",
+      "subtitle": "RAG",
+      "content": "Overcoming LLM limitations.",
+      "items": [
+        { "title": "Knowledge Cutoff", "text": "LLMs don't know current events." },
+        { "title": "Private Data", "text": "LLMs don't know your company data." },
+        { "title": "Hallucinations", "text": "Grounding answers in facts reduces errors." }
+      ],
+      "icon": "Search",
+      "type": "list"
+    },
+    {
+      "id": 38,
+      "title": "RAG Architecture",
+      "subtitle": "RAG",
+      "content": "The flow of data from document to answer.",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Document] -->|Chunk| B(Chunks)\n    B -->|Embed| C{Vector DB}\n    D[User Query] -->|Embed| E(Query Vector)\n    E -->|Search| C\n    C -->|Retrieve| F[Relevant Chunks]\n    F -->|Context| G[LLM]\n    D -->|Prompt| G\n    G -->|Answer| H[Response]",
+      "icon": "Layers",
+      "type": "mermaid_split"
+    },
+    {
+      "id": 39,
+      "title": "Step 1: Chunking",
+      "subtitle": "RAG",
+      "content": "Breaking data down.",
+      "items": [
+        { "title": "Size", "text": "500-1000 tokens is typical." },
+        { "title": "Overlap", "text": "Keep context between chunks (10-20%)." },
+        { "title": "Strategy", "text": "Split by paragraph, markdown header, etc." }
+      ],
+      "icon": "File",
+      "type": "list"
+    },
+    {
+      "id": 40,
+      "title": "Step 2: Embedding",
+      "subtitle": "RAG",
+      "content": "Text to Numbers.",
+      "items": [
+        { "title": "Vectors", "text": "Semantic representation of text." },
+        { "title": "Models", "text": "OpenAI text-embedding-3, Cohere, Voyage." },
+        { "title": "Similarity", "text": "Cosine similarity finds related content." }
+      ],
+      "icon": "Code",
+      "type": "list"
+    },
+    {
+      "id": 41,
+      "title": "Step 3: Vector Databases",
+      "subtitle": "RAG",
+      "content": "Where to store your embeddings.",
+      "items": [
+        { "title": "Pinecone", "text": "Managed, scalable.", "icon": "Database" },
+        { "title": "Chroma", "text": "Open source, local dev.", "icon": "Database" },
+        { "title": "Weaviate", "text": "Hybrid search, open source.", "icon": "Database" },
+        { "title": "Qdrant", "text": "High performance, Rust-based.", "icon": "Database" },
+        { "title": "pgvector", "text": "PostgreSQL extension.", "icon": "Database" }
+      ],
+      "icon": "Database",
+      "type": "cards"
+    },
+    {
+      "id": 42,
+      "title": "Step 4 & 5: Retrieval & Generation",
+      "subtitle": "RAG",
+      "content": "The Query Loop.",
+      "items": [
+        { "title": "Query", "text": "Embed user question." },
+        { "title": "Search", "text": "Find top-k similar chunks." },
+        { "title": "Prompt", "text": "Inject chunks into system prompt." },
+        { "title": "Answer", "text": "LLM generates response based on chunks." }
+      ],
+      "icon": "Search",
+      "type": "list"
+    },
+    {
+      "id": 43,
+      "title": "RAG Best Practices (2025)",
+      "subtitle": "RAG",
+      "content": "Optimizing for quality.",
+      "items": [
+        { "title": "Hybrid Search", "text": "Combine Semantic (Vector) + Keyword (BM25)." },
+        { "title": "Reranking", "text": "Use a reranker model to re-sort results." },
+        { "title": "Metadata Filtering", "text": "Filter by date/source before retrieval." },
+        { "title": "Query Augmentation", "text": "Expand/rephrase queries." }
+      ],
+      "icon": "CheckCircle",
+      "type": "list"
+    },
+    {
+      "id": 44,
+      "title": "Advanced RAG Variants",
+      "subtitle": "RAG",
+      "content": "For complex use cases.",
+      "items": [
+        { "title": "GraphRAG", "text": "Uses knowledge graphs for complex relationships." },
+        { "title": "Self-RAG", "text": "Self-reflective retrieval for higher accuracy." },
+        { "title": "Corrective RAG", "text": "Validates and corrects retrieved info." },
+        { "title": "Agentic RAG", "text": "Multi-step retrieval strategies." }
+      ],
+      "icon": "TrendingUp",
+      "type": "cards"
+    },
+    {
+      "id": 45,
+      "title": "Module 5: Tool Use",
+      "subtitle": "Function Calling",
+      "content": "Connecting LLMs to the outside world.",
+      "image": "tool_use.jpg",
+      "icon": "Zap",
+      "type": "title"
+    },
+    {
+      "id": 46,
+      "title": "What is Tool Use?",
+      "subtitle": "Tool Use",
+      "content": "Giving LLMs hands.",
+      "items": [
+        { "title": "Search", "text": "Browse the web." },
+        { "title": "Execute", "text": "Run Python code." },
+        { "title": "Query", "text": "Access databases." },
+        { "title": "Interact", "text": "Call APIs, send emails, manage files." }
+      ],
+      "icon": "Zap",
+      "type": "list"
+    },
+    {
+      "id": 47,
+      "title": "How It Works",
+      "subtitle": "Tool Use",
+      "content": "The model decides when to call a function.",
+      "code": "{\n  \"name\": \"get_weather\",\n  \"description\": \"Get current weather\",\n  \"parameters\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"location\": {\"type\": \"string\"}\n    }\n  }\n}",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 48,
+      "title": "Tool Call in Action",
+      "subtitle": "Tool Use",
+      "content": "Calling Claude with tools and executing them when requested.",
+      "code": "const response = await client.messages.create({\n  model: \"claude-3-5-sonnet-20240620\",\n  messages: [{ role: \"user\", content: \"What's the weather in NYC?\" }],\n  tools: [getWeatherTool] // Tool definitions from previous slide\n});\n\n// Claude responds with tool_use\nif (response.stop_reason === \"tool_use\") {\n  const toolUse = response.content.find(c => c.type === \"tool_use\");\n  const weather = await getWeather(toolUse.input.location);\n  // Send result back to Claude...\n}",
+      "icon": "Code",
+      "type": "code_split"
+    },
+    {
+      "id": 49,
+      "title": "Common Patterns",
+      "subtitle": "Tool Use",
+      "content": "What can you do with tools?",
+      "items": [
+        { "title": "Web Search", "text": "Get real-time info.", "icon": "Search" },
+        { "title": "Code Execution", "text": "Solve math, process data.", "icon": "Terminal" },
+        { "title": "Database", "text": "Query your SQL DB.", "icon": "Database" },
+        { "title": "Actions", "text": "Send emails, create tickets, etc.", "icon": "Zap" }
+      ],
+      "icon": "Zap",
+      "type": "list"
+    },
+    {
+      "id": 50,
+      "title": "Module 6: MCP",
+      "subtitle": "Model Context Protocol",
+      "content": "The 'USB-C' for AI applications.",
+      "image": "mcp.jpg",
+      "icon": "Network",
+      "type": "title"
+    },
+    {
+      "id": 51,
+      "title": "Why MCP?",
+      "subtitle": "MCP",
+      "content": "Standardized connection between AI and data.",
+      "items": [
+        { "title": "Universal", "text": "Write once, use with any client." },
+        { "title": "Ecosystem", "text": "Thousands of pre-built servers." },
+        { "title": "N x M Problem", "text": "Solves the integration explosion." }
+      ],
+      "icon": "Share2",
+      "type": "list"
+    },
+    {
+      "id": 52,
+      "title": "MCP Architecture",
+      "subtitle": "MCP",
+      "content": "Client-Server protocol connecting AI applications to data sources and tools.",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    Client[MCP Client<br/>Claude Desktop, Cursor, IDE]\n    Protocol[JSON-RPC Protocol<br/>Standardized Messages]\n    Server1[MCP Server<br/>GitHub]\n    Server2[MCP Server<br/>Google Drive]\n    Server3[MCP Server<br/>PostgreSQL]\n\n    Client <-->|Tools Request| Protocol\n    Client <-->|Resources Request| Protocol\n    Client <-->|Prompts Request| Protocol\n\n    Protocol <-->|Response| Server1\n    Protocol <-->|Response| Server2\n    Protocol <-->|Response| Server3\n\n    style Client fill:#e0e7ff\n    style Protocol fill:#fef3c7\n    style Server1 fill:#d1fae5\n    style Server2 fill:#d1fae5\n    style Server3 fill:#d1fae5",
+      "icon": "Network",
+      "type": "mermaid_split"
+    },
+    {
+      "id": 53,
+      "title": "MCP Primitives",
+      "subtitle": "MCP",
+      "content": "What can MCP do?",
+      "items": [
+        { "title": "Tools", "text": "Functions the model can call.", "icon": "Zap" },
+        { "title": "Resources", "text": "Data sources to read from.", "icon": "Database" },
+        { "title": "Prompts", "text": "Pre-built templates.", "icon": "MessageSquare" }
+      ],
+      "icon": "Layers",
+      "type": "cards"
+    },
+    {
+      "id": 54,
+      "title": "Pre-built Servers",
+      "subtitle": "MCP",
+      "content": "Ready to use integrations.",
+      "items": [
+        { "title": "Filesystem", "text": "Read/Write local files." },
+        { "title": "GitHub/Git", "text": "Repository management." },
+        { "title": "PostgreSQL", "text": "Database access." },
+        { "title": "Playwright", "text": "Browser automation." },
+        { "title": "Jira", "text": "Project management." }
+      ],
+      "icon": "Server",
+      "type": "list"
+    },
+    {
+      "id": 55,
+      "title": "Getting Started",
+      "subtitle": "MCP",
+      "content": "How to use MCP.",
+      "items": [
+        { "title": "Claude Desktop", "text": "Enable MCP in settings." },
+        { "title": "Cursor", "text": "Test and use MCP servers." },
+        { "title": "GitHub Copilot", "text": "MCP support available." },
+        { "title": "SDKs", "text": "Python & TypeScript SDKs available." }
+      ],
+      "icon": "Rocket",
+      "type": "list"
+    },
+    {
+      "id": 56,
+      "title": "Module 7: Agents",
+      "subtitle": "Autonomous Systems",
+      "content": "Systems that Perceive, Reason, Act, and Learn.",
+      "image": "agents.png",
+      "icon": "Rocket",
+      "type": "title"
+    },
+    {
+      "id": 57,
+      "title": "What are Agents?",
+      "subtitle": "Agents",
+      "content": "Beyond simple chatbots. Agents are autonomous systems that perceive their environment, reason about goals, take actions, and learn from results.",
+      "visualType": "mermaid",
+      "visualContent": "graph TB\n    Start([User Goal]) --> Perceive[Perceive<br/>Context & Environment]\n    Perceive --> Reason[Reason<br/>Plan & Strategy]\n    Reason --> Act[Act<br/>Execute Tools]\n    Act --> Observe[Observe<br/>Results & Feedback]\n    Observe --> Learn{Goal<br/>Achieved?}\n    Learn -->|No| Perceive\n    Learn -->|Yes| End([Complete])\n\n    style Start fill:#e0e7ff\n    style End fill:#d1fae5\n    style Perceive fill:#fef3c7\n    style Reason fill:#ddd6fe\n    style Act fill:#fecaca\n    style Observe fill:#bfdbfe\n    style Learn fill:#fed7aa",
+      "icon": "Brain",
+      "type": "mermaid_split"
+    },
+    {
+      "id": 58,
+      "title": "Agent Architecture",
+      "subtitle": "Agents",
+      "content": "The internal components that power an agent system.",
+      "visualType": "mermaid",
+      "visualContent": "graph TB\n    User[User Input] --> Agent[Agent Core]\n\n    Agent --> LLM[LLM Brain<br/>Reasoning & Planning]\n\n    LLM --> Memory[(Memory<br/>Conversation History)]\n    Memory --> LLM\n\n    LLM --> RAG[RAG System<br/>External Knowledge]\n    RAG --> VectorDB[(Vector DB<br/>Embeddings)]\n    VectorDB --> RAG\n    RAG --> LLM\n\n    LLM --> Tools[Tool Execution<br/>MCP / Functions]\n    Tools --> API[External APIs<br/>Databases, Web, etc.]\n    API --> Tools\n    Tools --> LLM\n\n    LLM --> Response[Response to User]\n    Response --> User\n\n    style User fill:#e0e7ff\n    style Agent fill:#fef3c7\n    style LLM fill:#ddd6fe\n    style Memory fill:#bfdbfe\n    style RAG fill:#fecaca\n    style VectorDB fill:#fed7aa\n    style Tools fill:#d1fae5\n    style API fill:#e9d5ff\n    style Response fill:#e0e7ff",
+      "icon": "Layers",
+      "type": "mermaid_split"
+    },
+    {
+      "id": 59,
+      "title": "Module 7A: Agentic Loops",
+      "subtitle": "Reasoning",
+      "content": "How agents execute complex tasks.",
+      "image": "agentic-loop.png",
+      "icon": "Activity",
+      "type": "title"
+    },
+    {
+      "id": 60,
+      "title": "The Core Loop",
+      "subtitle": "Agentic Loops",
+      "content": "The fundamental cycle that powers all agentic systems: perceive the environment, reason about next steps, take action, and repeat.",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n      Start([User Goal]) --> Perceive[Perceive<br/>Read context & history]\n      Perceive --> Think[Think<br/>LLM decides next step]\n      Think --> Decision{Tool<br/>Needed?}\n      Decision -->|Yes| Act[Act<br/>Execute tool]\n      Act --> Observe[Observe<br/>Capture result]\n      Observe --> Perceive\n      Decision -->|No| Answer[Return Answer]\n      Answer --> End([Complete])\n\n      style Start fill:#e0e7ff\n      style End fill:#d1fae5\n      style Perceive fill:#fef3c7\n      style Think fill:#ddd6fe\n      style Act fill:#fecaca\n      style Observe fill:#bfdbfe\n      style Decision fill:#fed7aa\n      style Answer fill:#d1fae5",
+      "icon": "Code",
+      "type": "mermaid_split"
+    },
+    {
+      "id": 61,
+      "title": "ReAct Pattern",
+      "subtitle": "Agentic Loops",
+      "content": "Reasoning + Acting. The agent alternates between thinking (reasoning) and doing (acting with tools) until it reaches a solution.",
+      "code": "// \"What's the weather in San Francisco?\"\n\nwhile (!done) {\n  // Thought: Reason about next step\n  const response = await callClaude(prompt, observation);\n\n  // Action: Execute tool if needed\n  if (response.needsTool) {\n    observation = await executeTool(response.tool);\n    continue; // Loop back to think\n  }\n\n  // Answer: Done reasoning\n  return response.answer;\n}",
+      "icon": "MessageSquare",
+      "type": "code_split"
+    },
+    {
+      "id": 62,
+      "title": "Planning Pattern: Plan-Execute",
+      "subtitle": "Agentic Loops",
+      "content": "Create a complete plan upfront, then execute each step sequentially.",
+      "code": "// Step 1: Create the plan\nconst plan = await callClaude(`Create a step-by-step plan\nto research and write a blog post about AI agents.`);\n\n// plan.steps = [\n//   \"1. Research AI agent architectures\",\n//   \"2. Find real-world examples\",\n//   \"3. Create outline\",\n//   \"4. Write draft\",\n//   \"5. Review and edit\"\n// ]\n\n// Step 2: Execute each step\nfor (const step of plan.steps) {\n  const result = await executeStep(step);\n  results.push(result);\n}",
+      "icon": "GitBranch",
+      "type": "code_split"
+    },
+    {
+      "id": 63,
+      "title": "Planning Pattern: Reflexion",
+      "subtitle": "Agentic Loops",
+      "content": "Try an approach, evaluate the result, learn from mistakes, and retry with improvements.",
+      "code": "let attempt = 0;\nlet maxAttempts = 3;\n\nwhile (attempt < maxAttempts) {\n  // Try: Execute the task\n  const result = await executeTask(prompt);\n\n  // Evaluate: Check quality\n  const evaluation = await callClaude(`Review this result\n  and identify issues: ${result}`);\n\n  if (evaluation.isGood) {\n    return result; // Success!\n  }\n\n  // Correct: Learn and improve\n  prompt = `Previous attempt failed because:\n  ${evaluation.issues}. Try again with improvements.`;\n  attempt++;\n}",
+      "icon": "GitBranch",
+      "type": "code_split"
+    },
+    {
+      "id": 64,
+      "title": "Planning Pattern: Tree of Thoughts",
+      "subtitle": "Agentic Loops",
+      "content": "Explore multiple solution paths in parallel, evaluate each, and choose the best one.",
+      "code": "// Generate multiple approaches\nconst approaches = await callClaude(`Generate 3 different\napproaches to solve: ${problem}`);\n\n// Explore each path\nconst results = await Promise.all(\n  approaches.map(async (approach) => {\n    const solution = await executePath(approach);\n    const score = await evaluateSolution(solution);\n    return { solution, score, approach };\n  })\n);\n\n// Pick the best\nconst best = results.sort((a, b) =>\n  b.score - a.score\n)[0];\n\nreturn best.solution;",
+      "icon": "GitBranch",
+      "type": "code_split"
+    },
+    {
+      "id": 65,
+      "title": "Controlling Behavior",
+      "subtitle": "Agentic Loops",
+      "content": "Keeping agents in check.",
+      "items": [
+        { "title": "Loops", "text": "Set max iterations." },
+        { "title": "Budget", "text": "Limit token usage." },
+        { "title": "Human-in-the-loop", "text": "Ask for approval." }
+      ],
+      "icon": "Lock",
+      "type": "cards"
+    },
+    {
+      "id": 66,
+      "title": "Frameworks",
+      "subtitle": "Agentic Loops",
+      "content": "Don't build from scratch if you don't have to.",
+      "items": [
+        { "title": "LangChain", "text": "General LLM apps. Modular." },
+        { "title": "LangGraph", "text": "Complex, stateful workflows." },
+        { "title": "CrewAI", "text": "Multi-agent teams." },
+        { "title": "OpenAI Agents SDK", "text": "OpenAI-native." }
+      ],
+      "icon": "Layers",
+      "type": "cards"
+    },
+    {
+      "id": 67,
+      "title": "Resources",
+      "subtitle": "Reference",
+      "content": "Bookmark these.",
+      "items": [
+        { "title": "MCP Boilerplate", "text": "https://mcpboilerplate.com - Quick start MCP servers" },
+        { "title": "RAGFlow", "text": "https://github.com/infiniflow/ragflow - Open-source RAG engine" },
+        { "title": "LangGraph", "text": "https://github.com/langchain-ai/langgraph - Build stateful agents" },
+        { "title": "Claude Agent SDK", "text": "https://platform.claude.com/docs/en/agent-sdk - Official agent framework" },
+        { "title": "MCP Servers", "text": "https://github.com/modelcontextprotocol - Official MCP server implementations" }
+      ],
+      "icon": "BookOpen",
+      "type": "list"
+    },
+    {
+      "id": 68,
+      "title": "Summary",
+      "subtitle": "The Stack",
+      "content": "The Gen AI Stack.",
+      "items": [
+        { "title": "App", "text": "Your UI/Logic" },
+        { "title": "Agent", "text": "Reasoning Loop" },
+        { "title": "Tools", "text": "MCP / RAG" },
+        { "title": "Model", "text": "LLM" }
+      ],
+      "icon": "Layers",
+      "type": "list"
+    },
+    {
+      "id": 69,
+      "title": "Let's Build!",
+      "subtitle": "Good Luck",
+      "content": "Go build something amazing.",
+      "image": "let-build.png",
+      "icon": "Rocket",
+      "type": "title"
+    }
+  ]
+}
