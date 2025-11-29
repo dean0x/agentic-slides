@@ -1,4 +1,4 @@
-# Gen AI Hackathon Education Session — Curriculum
+# Intro to Gen AI — Curriculum
 
 **Duration:** ~2.5 hours (with breaks)  
 **Audience:** Mixed (65% software engineers, 35% non-technical)  

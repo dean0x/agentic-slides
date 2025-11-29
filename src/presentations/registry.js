@@ -24,15 +24,26 @@
  */
 export const presentations = [
   {
-    id: 'gen-ai-hackathon',
-    title: 'Gen AI Hackathon Education Session',
-    subtitle: 'Curriculum',
+    id: 'intro-to-gen-ai',
+    title: 'Intro to Gen AI',
+    subtitle: 'Foundations',
     description: 'Comprehensive introduction to Gen AI concepts including LLMs, prompt engineering, RAG, tool use, MCP, and agents.',
     author: 'Education Team',
     date: '2025',
-    tags: ['ai', 'llm', 'rag', 'agents', 'mcp', 'hackathon'],
-    thumbnail: '/presentations/gen-ai-hackathon/assets/intro_slide.jpg',
-    loader: () => import('./gen-ai-hackathon/slides.json')
+    tags: ['ai', 'llm', 'rag', 'agents', 'mcp'],
+    thumbnail: '/presentations/intro-to-gen-ai/assets/intro_slide.jpg',
+    loader: () => import('./intro-to-gen-ai/slides.json')
+  },
+  {
+    id: 'agentic-sdlc',
+    title: 'Agentic SDLC',
+    subtitle: 'AI-Powered Software Development',
+    description: 'How AI agents are transforming the software development lifecycle - from requirements to deployment.',
+    author: 'Engineering Team',
+    date: '2025',
+    tags: ['ai', 'sdlc', 'agents', 'development', 'automation'],
+    thumbnail: null,
+    loader: () => import('./agentic-sdlc/slides.json')
   }
 ];
 

@@ -1,0 +1,559 @@
+{
+  "meta": {
+    "id": "agentic-sdlc",
+    "title": "Agentic SDLC",
+    "subtitle": "AI-Powered Software Development",
+    "description": "How AI agents are transforming every phase of the software development lifecycle.",
+    "author": "Engineering Team",
+    "date": "2025",
+    "tags": ["sdlc", "ai", "agents", "development", "automation"]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#6366f1"
+    },
+    "mermaid": {
+      "primaryColor": "#e0e7ff",
+      "primaryTextColor": "#1e293b",
+      "primaryBorderColor": "#818cf8"
+    },
+    "benchmarkColors": {
+      "Traditional": "#94a3b8",
+      "AI-Assisted": "#6366f1",
+      "Fully Agentic": "#8b5cf6"
+    }
+  },
+  "slides": [
+    {
+      "id": 1,
+      "title": "Agentic SDLC",
+      "subtitle": "Introduction",
+      "content": "The future of software development is autonomous, intelligent, and collaborative.",
+      "icon": "Rocket",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Human Intent] --> B[AI Agent]\n    B --> C[Plan]\n    B --> D[Code]\n    B --> E[Test]\n    B --> F[Deploy]\n    C --> G[Working Software]\n    D --> G\n    E --> G\n    F --> G"
+    },
+    {
+      "id": 2,
+      "title": "What We'll Cover",
+      "subtitle": "Agenda",
+      "content": "A comprehensive look at AI-powered software development in 2025.",
+      "items": [
+        { "title": "1. The Shift", "text": "From traditional to agentic development", "icon": "TrendingUp" },
+        { "title": "2. The Phases", "text": "AI across the entire SDLC", "icon": "GitBranch" },
+        { "title": "3. The Tools", "text": "Modern agentic platforms & MCP", "icon": "Wrench" },
+        { "title": "4. Security & Risks", "text": "Navigating the challenges", "icon": "Shield" },
+        { "title": "5. The Practice", "text": "Best practices and adoption", "icon": "BookOpen" },
+        { "title": "6. The Future", "text": "Where we're heading", "icon": "Sparkles" }
+      ],
+      "type": "list",
+      "icon": "List"
+    },
+    {
+      "id": 3,
+      "title": "The 2025 Reality",
+      "subtitle": "The Shift",
+      "content": "AI in software development has reached mainstream adoption.",
+      "items": [
+        { "title": "76.5%", "text": "Expect AI role in development to grow significantly (up from 70.5% in 2024)", "icon": "TrendingUp" },
+        { "title": "49.4%", "text": "Companies using AI in development for over a year (up from 32.5%)", "icon": "Building" },
+        { "title": "62%", "text": "Speed gain: Feature rollout from 3 weeks to 8 days", "icon": "Zap" },
+        { "title": "33%", "text": "Enterprise apps expected to use agentic AI by 2028 (from <1% in 2024)", "icon": "Rocket" }
+      ],
+      "type": "cards",
+      "icon": "BarChart"
+    },
+    {
+      "id": 4,
+      "title": "The Traditional SDLC",
+      "subtitle": "The Shift",
+      "content": "The classic waterfall and agile approaches we've used for decades.",
+      "type": "mermaid_split",
+      "visualContent": "graph LR\n    A[Requirements] --> B[Design]\n    B --> C[Development]\n    C --> D[Testing]\n    D --> E[Deployment]\n    E --> F[Maintenance]\n    F -.-> A"
+    },
+    {
+      "id": 5,
+      "title": "The Problem with Traditional SDLC",
+      "subtitle": "The Shift",
+      "content": "Manual processes create bottlenecks and slow delivery.",
+      "items": [
+        { "title": "Context Switching", "text": "Developers lose hours switching between tasks and tools", "icon": "Brain" },
+        { "title": "Knowledge Silos", "text": "Critical information trapped in individuals", "icon": "Lock" },
+        { "title": "Repetitive Work", "text": "60-80% of coding tasks are repetitive (2025 projection)", "icon": "Copy" },
+        { "title": "Slow Feedback", "text": "Bugs discovered late in the cycle are expensive to fix", "icon": "AlertTriangle" }
+      ],
+      "type": "list",
+      "icon": "AlertCircle"
+    },
+    {
+      "id": 6,
+      "title": "Three Levels of AI Development",
+      "subtitle": "The Shift",
+      "content": "Understanding the spectrum from assistance to autonomy.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    subgraph Level 1\n        A[AI-Assisted]\n        A1[Autocomplete & Suggestions]\n    end\n    subgraph Level 2\n        B[AI-Collaborative]\n        B1[Workflow Automation]\n    end\n    subgraph Level 3\n        C[Fully Agentic]\n        C1[Autonomous Execution]\n    end\n    A --> B\n    B --> C"
+    },
+    {
+      "id": 7,
+      "title": "Enter Agentic SDLC",
+      "subtitle": "The Shift",
+      "content": "AI agents as collaborative partners throughout development.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    subgraph Human\n        A[Intent & Direction]\n        B[Review & Approve]\n    end\n    subgraph Agent\n        C[Understand Context]\n        D[Generate Solutions]\n        E[Execute & Iterate]\n        F[Learn & Improve]\n    end\n    A --> C\n    C --> D\n    D --> E\n    E --> B\n    B --> F\n    F --> C"
+    },
+    {
+      "id": 8,
+      "title": "Human-on-the-Loop",
+      "subtitle": "The Shift",
+      "content": "The new AI control model that actually works.",
+      "items": [
+        { "title": "Human-in-the-Loop", "text": "Approve every action (slow, safe)", "icon": "Hand" },
+        { "title": "Human-on-the-Loop", "text": "Monitor and intervene when needed (balanced)", "icon": "Eye" },
+        { "title": "Human-out-of-Loop", "text": "Full autonomy (fast, risky)", "icon": "Bot" }
+      ],
+      "type": "cards",
+      "icon": "Users"
+    },
+    {
+      "id": 9,
+      "title": "Productivity Impact",
+      "subtitle": "The Shift",
+      "content": "Real-world productivity gains measured in 2025 studies.",
+      "type": "benchmark_chart",
+      "benchmarkData": [
+        { "model": "Traditional", "score": 100 },
+        { "model": "AI-Assisted", "score": 250 },
+        { "model": "Fully Agentic", "score": 500 }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The DORA Warning",
+      "subtitle": "The Shift",
+      "content": "AI adoption requires safeguards for stability.",
+      "items": [
+        { "title": "Productivity Up 2%", "text": "Individual developer productivity increased with AI", "icon": "TrendingUp" },
+        { "title": "Stability Down 7%", "text": "Without safeguards like small batch sizes and testing", "icon": "AlertTriangle" },
+        { "title": "The Lesson", "text": "AI must be paired with systemic safeguards to succeed", "icon": "Shield" }
+      ],
+      "type": "cards",
+      "icon": "AlertCircle"
+    },
+    {
+      "id": 11,
+      "title": "Requirements & Planning",
+      "subtitle": "The Phases",
+      "content": "AI transforms how we gather and refine requirements.",
+      "icon": "FileText",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    A[User Story] --> B[AI Analysis]\n    B --> C[Clarifying Questions]\n    C --> D[Refined Requirements]\n    D --> E[Acceptance Criteria]\n    D --> F[Test Cases]\n    D --> G[Task Breakdown]"
+    },
+    {
+      "id": 12,
+      "title": "AI-Powered Requirements",
+      "subtitle": "The Phases",
+      "content": "From vague ideas to actionable specifications.",
+      "items": [
+        { "title": "Natural Language Input", "text": "Describe what you want in plain English", "icon": "MessageSquare" },
+        { "title": "Ambiguity Detection", "text": "AI identifies gaps and asks clarifying questions", "icon": "Search" },
+        { "title": "Automatic Breakdown", "text": "Complex features split into implementable tasks", "icon": "GitBranch" },
+        { "title": "Sprint Planning", "text": "AI-assisted estimation and prioritization", "icon": "Calendar" }
+      ],
+      "type": "list",
+      "icon": "FileText"
+    },
+    {
+      "id": 13,
+      "title": "Design & Architecture",
+      "subtitle": "The Phases",
+      "content": "AI assists in creating robust, scalable system designs.",
+      "icon": "Layers",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Requirements] --> B[AI Design Agent]\n    B --> C[Architecture Options]\n    C --> D[Trade-off Analysis]\n    D --> E[Selected Design]\n    E --> F[Component Specs]\n    E --> G[API Contracts]\n    E --> H[Data Models]"
+    },
+    {
+      "id": 14,
+      "title": "Architecture Assistance",
+      "subtitle": "The Phases",
+      "content": "AI brings pattern knowledge and best practices to design decisions.",
+      "items": [
+        { "title": "Pattern Recognition", "text": "Suggests appropriate architectural patterns for your use case", "icon": "Layers" },
+        { "title": "Trade-off Analysis", "text": "Evaluates scalability, maintainability, and cost implications", "icon": "Activity" },
+        { "title": "Diagram Generation", "text": "Creates visual representations of proposed architectures", "icon": "Network" },
+        { "title": "ADR Generation", "text": "Generates Architecture Decision Records automatically", "icon": "FileText" }
+      ],
+      "type": "list",
+      "icon": "Layers"
+    },
+    {
+      "id": 15,
+      "title": "Development & Coding",
+      "subtitle": "The Phases",
+      "content": "The most transformed phase of the SDLC.",
+      "icon": "Code",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    A[Task] --> B[Context Gathering]\n    B --> C[Code Generation]\n    C --> D[Self-Review]\n    D --> E[Test Generation]\n    E --> F[Iteration]\n    F --> G[PR Ready]"
+    },
+    {
+      "id": 16,
+      "title": "Agentic Coding Capabilities",
+      "subtitle": "The Phases",
+      "content": "What modern AI coding agents can do in 2025.",
+      "items": [
+        { "title": "Full Feature Implementation", "text": "From task description to working code", "icon": "Code" },
+        { "title": "Codebase Understanding", "text": "Navigates and comprehends entire repositories", "icon": "Search" },
+        { "title": "Multi-file Orchestration", "text": "Coordinated edits across many files simultaneously", "icon": "GitBranch" },
+        { "title": "Autonomous Debugging", "text": "Diagnose, hypothesize, test, and fix issues", "icon": "Bug" },
+        { "title": "Legacy Modernization", "text": "Refactor and update legacy codebases", "icon": "RefreshCw" }
+      ],
+      "type": "list",
+      "icon": "Code"
+    },
+    {
+      "id": 17,
+      "title": "The Agentic Loop",
+      "subtitle": "The Phases",
+      "content": "How agents iteratively solve complex problems with autonomy.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    A[Receive Task] --> B[Analyze Context]\n    B --> C[Plan Approach]\n    C --> D[Execute Step]\n    D --> E{Success?}\n    E -->|Yes| F[Next Step]\n    E -->|No| G[Self-Correct]\n    G --> C\n    F --> H{Complete?}\n    H -->|No| D\n    H -->|Yes| I[Deliver Result]"
+    },
+    {
+      "id": 18,
+      "title": "Testing & Quality",
+      "subtitle": "The Phases",
+      "content": "AI-powered testing with 50-70% fewer production defects.",
+      "icon": "CheckCircle",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Code Change] --> B[AI Test Agent]\n    B --> C[Unit Tests]\n    B --> D[Integration Tests]\n    B --> E[Edge Cases]\n    C --> F[Coverage Analysis]\n    D --> F\n    E --> F\n    F --> G[Quality Report]"
+    },
+    {
+      "id": 19,
+      "title": "AI Testing Capabilities",
+      "subtitle": "The Phases",
+      "content": "Comprehensive quality assurance with AI assistance.",
+      "items": [
+        { "title": "Test Generation", "text": "Automatic creation of unit and integration tests", "icon": "FileCode" },
+        { "title": "Edge Case Discovery", "text": "AI identifies scenarios humans often miss", "icon": "AlertTriangle" },
+        { "title": "Regression Detection", "text": "Understands change impact across the system", "icon": "GitBranch" },
+        { "title": "AI Hallucination Catching", "text": "Dedicated tools catch AI-generated bugs before production", "icon": "Eye" }
+      ],
+      "type": "list",
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 20,
+      "title": "Code Review Evolution",
+      "subtitle": "The Phases",
+      "content": "AI augments human review for faster, more thorough feedback.",
+      "items": [
+        { "title": "Automated First Pass", "text": "AI catches common issues before human review", "icon": "Eye" },
+        { "title": "Security Scanning", "text": "Identifies OWASP vulnerabilities and suggests fixes", "icon": "Shield" },
+        { "title": "PR Analysis", "text": "Tools like CodeRabbit analyze PRs across IDEs and CLI", "icon": "GitPullRequest" },
+        { "title": "Real Bug Detection", "text": "Goes beyond linting to catch actual bugs", "icon": "Bug" }
+      ],
+      "type": "list",
+      "icon": "Eye"
+    },
+    {
+      "id": 21,
+      "title": "Agentic DevOps",
+      "subtitle": "The Phases",
+      "content": "Microsoft's Build 2025 vision: AI agents across the DevOps lifecycle.",
+      "icon": "Rocket",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    A[Merge] --> B[AI CI/CD]\n    B --> C[Build]\n    C --> D[Test]\n    D --> E[Deploy]\n    E --> F[Monitor]\n    F --> G[Alert]\n    G --> H[Auto-Remediate]"
+    },
+    {
+      "id": 22,
+      "title": "Intelligent Operations",
+      "subtitle": "The Phases",
+      "content": "AI-powered monitoring, deployment, and incident response.",
+      "items": [
+        { "title": "Autonomous Bug Fixes", "text": "Copilot Agent Mode fixes bugs and reviews code", "icon": "Bug" },
+        { "title": "K8s Management", "text": "AI agents restart pods, scale deployments, summarize logs", "icon": "Server" },
+        { "title": "Predictive Scaling", "text": "Capacity planning based on learned patterns", "icon": "TrendingUp" },
+        { "title": "Auto-Remediation", "text": "Known issues fixed before humans are paged", "icon": "Wrench" }
+      ],
+      "type": "list",
+      "icon": "Activity"
+    },
+    {
+      "id": 23,
+      "title": "Model Context Protocol",
+      "subtitle": "The Tools",
+      "content": "The USB-C for AI: Standardizing agent-tool connections.",
+      "icon": "Link",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    subgraph MCP Client\n        A[AI Agent]\n    end\n    subgraph MCP Servers\n        B[Database]\n        C[APIs]\n        D[File System]\n        E[Dev Tools]\n    end\n    A <-->|MCP| B\n    A <-->|MCP| C\n    A <-->|MCP| D\n    A <-->|MCP| E"
+    },
+    {
+      "id": 24,
+      "title": "MCP: The New Standard",
+      "subtitle": "The Tools",
+      "content": "Model Context Protocol is becoming the backbone of agentic workflows.",
+      "items": [
+        { "title": "Universal Protocol", "text": "One integration unlocks entire ecosystem of tools", "icon": "Link" },
+        { "title": "Major Adoption", "text": "Microsoft, OpenAI, Anthropic all supporting MCP", "icon": "Building" },
+        { "title": "75% by 2026", "text": "Gartner predicts API gateway vendors will have MCP features", "icon": "TrendingUp" },
+        { "title": "Agent-to-Agent", "text": "A2A protocol enables multi-agent communication", "icon": "Network" }
+      ],
+      "type": "list",
+      "icon": "Link"
+    },
+    {
+      "id": 25,
+      "title": "Modern Agentic Tools",
+      "subtitle": "The Tools",
+      "content": "The platforms powering agentic development in 2025.",
+      "icon": "Wrench",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    subgraph CLI Agents\n        A[Claude Code]\n        B[Gemini CLI]\n        C[Aider]\n    end\n    subgraph IDE Agents\n        D[Cursor]\n        E[Windsurf]\n        F[GitHub Copilot]\n    end\n    subgraph Autonomous\n        G[Devin]\n        H[Codex]\n    end"
+    },
+    {
+      "id": 26,
+      "title": "Claude Code",
+      "subtitle": "The Tools",
+      "content": "Anthropic's terminal-native agentic coding assistant.",
+      "items": [
+        { "title": "Terminal-Native", "text": "Works where developers already are - in the CLI", "icon": "Terminal" },
+        { "title": "Full Autonomy", "text": "Plan mode for complex tasks, autonomous execution", "icon": "Bot" },
+        { "title": "MCP Integration", "text": "Connect to any tool through Model Context Protocol", "icon": "Link" },
+        { "title": "Security Review", "text": "Built-in /security-review command for vulnerability scanning", "icon": "Shield" }
+      ],
+      "type": "list",
+      "icon": "Terminal"
+    },
+    {
+      "id": 27,
+      "title": "Cursor & IDE Agents",
+      "subtitle": "The Tools",
+      "content": "AI-first IDEs with deep code understanding.",
+      "items": [
+        { "title": "Cursor", "text": "AI-first IDE with Tab completions and Agent mode", "icon": "Code" },
+        { "title": "Background Agents", "text": "Autonomous agents working in the cloud", "icon": "Cloud" },
+        { "title": "Multi-Model", "text": "Switch between Claude, GPT, Gemini based on task", "icon": "RefreshCw" },
+        { "title": "Windsurf", "text": "Agentic AI assistant with team collaboration", "icon": "Users" }
+      ],
+      "type": "list",
+      "icon": "Code"
+    },
+    {
+      "id": 28,
+      "title": "Devin: The AI Engineer",
+      "subtitle": "The Tools",
+      "content": "Cognition's fully autonomous software engineer.",
+      "items": [
+        { "title": "Full Autonomy", "text": "Plans, implements, and debugs from natural language", "icon": "Bot" },
+        { "title": "Cloud Environment", "text": "Complete development environment in the cloud", "icon": "Cloud" },
+        { "title": "Async Workflows", "text": "Set tasks and get results, like a remote team member", "icon": "Clock" },
+        { "title": "End-to-End", "text": "From requirements to deployed application", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "Bot"
+    },
+    {
+      "id": 29,
+      "title": "Security Risks",
+      "subtitle": "Security & Risks",
+      "content": "AI-generated code introduces new vulnerability patterns.",
+      "icon": "Shield",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[AI Agent] --> B[Generated Code]\n    B --> C{Security Scan}\n    C -->|Vulnerabilities| D[10x More Findings]\n    C -->|Clean| E[Safe to Deploy]\n    D --> F[Human Review]\n    F --> G[Remediation]"
+    },
+    {
+      "id": 30,
+      "title": "The 10x Vulnerability Spike",
+      "subtitle": "Security & Risks",
+      "content": "AI coding assistants are shipping more risks at scale.",
+      "items": [
+        { "title": "10,000+ Findings/Month", "text": "AI-generated code introduced 10x more security findings by June 2025", "icon": "AlertTriangle" },
+        { "title": "All Categories", "text": "OSS dependencies, insecure patterns, secrets, misconfigs", "icon": "Shield" },
+        { "title": "Blind Trust", "text": "Developers often treat AI output as trustworthy without verification", "icon": "Eye" },
+        { "title": "Scale Problem", "text": "4x velocity means 4x the attack surface if unchecked", "icon": "TrendingUp" }
+      ],
+      "type": "list",
+      "icon": "AlertTriangle"
+    },
+    {
+      "id": 31,
+      "title": "Agentic AI Security Threats",
+      "subtitle": "Security & Risks",
+      "content": "Unique risks introduced by autonomous AI agents.",
+      "items": [
+        { "title": "Memory Poisoning", "text": "Attackers corrupt agent memory to alter behavior over time", "icon": "Brain" },
+        { "title": "Tool Misuse", "text": "Agents become vectors for lateral movement or RCE", "icon": "Wrench" },
+        { "title": "Privilege Escalation", "text": "Manipulating agent identity flows to gain access", "icon": "Key" },
+        { "title": "Prompt Injection", "text": "Malicious inputs that hijack agent behavior", "icon": "Terminal" }
+      ],
+      "type": "cards",
+      "icon": "Shield"
+    },
+    {
+      "id": 32,
+      "title": "Security Best Practices",
+      "subtitle": "Security & Risks",
+      "content": "Mitigating risks while maintaining velocity.",
+      "items": [
+        { "title": "Mandatory Review", "text": "All agent-generated code through human review before merge", "icon": "Eye" },
+        { "title": "Security Scanning", "text": "SAST/DAST tools trained on AI-specific vulnerability patterns", "icon": "Search" },
+        { "title": "Least Privilege", "text": "Agents get minimum permissions needed for tasks", "icon": "Lock" },
+        { "title": "Provenance Tracking", "text": "Track which code was AI-generated for audit", "icon": "GitBranch" },
+        { "title": "Red Teaming", "text": "Adversarial testing of agentic workflows", "icon": "Shield" }
+      ],
+      "type": "list",
+      "icon": "Shield"
+    },
+    {
+      "id": 33,
+      "title": "Best Practices",
+      "subtitle": "The Practice",
+      "content": "How to get the most from agentic development.",
+      "icon": "BookOpen",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Clear Intent] --> B[Good Context]\n    B --> C[Iterative Refinement]\n    C --> D[Human Oversight]\n    D --> E[Continuous Learning]"
+    },
+    {
+      "id": 34,
+      "title": "Working with AI Agents",
+      "subtitle": "The Practice",
+      "content": "Patterns for effective human-AI collaboration.",
+      "items": [
+        { "title": "Plan First", "text": "Ask for a plan before implementation, review approach", "icon": "Map" },
+        { "title": "Provide Context", "text": "Share relevant background, constraints, and examples", "icon": "FileText" },
+        { "title": "Interrupt & Redirect", "text": "Guide the agent when it goes off track", "icon": "RefreshCw" },
+        { "title": "Verify Everything", "text": "Always review AI-generated code before shipping", "icon": "CheckCircle" },
+        { "title": "Learn the Why", "text": "Understand what the AI did and why", "icon": "BookOpen" }
+      ],
+      "type": "list",
+      "icon": "Users"
+    },
+    {
+      "id": 35,
+      "title": "What to Delegate",
+      "subtitle": "The Practice",
+      "content": "Tasks where AI agents excel.",
+      "items": [
+        { "title": "Boilerplate & Scaffolding", "text": "Repetitive patterns and project setup", "icon": "Copy" },
+        { "title": "Test Generation", "text": "Coverage expansion, edge cases, regression tests", "icon": "CheckCircle" },
+        { "title": "Refactoring", "text": "Systematic improvements across codebase", "icon": "RefreshCw" },
+        { "title": "Documentation", "text": "API docs, comments, READMEs, ADRs", "icon": "FileText" },
+        { "title": "Debugging", "text": "Root cause analysis with full codebase context", "icon": "Bug" }
+      ],
+      "type": "list",
+      "icon": "GitBranch"
+    },
+    {
+      "id": 36,
+      "title": "What to Keep Human",
+      "subtitle": "The Practice",
+      "content": "Areas where human judgment remains essential.",
+      "items": [
+        { "title": "Architecture Decisions", "text": "High-level design choices with long-term impact", "icon": "Layers" },
+        { "title": "Security-Critical Code", "text": "Auth, encryption, access control need expert review", "icon": "Shield" },
+        { "title": "Business Logic", "text": "Core domain rules and competitive differentiators", "icon": "Brain" },
+        { "title": "Ethical Decisions", "text": "Bias, fairness, and societal impact considerations", "icon": "Scale" }
+      ],
+      "type": "list",
+      "icon": "Users"
+    },
+    {
+      "id": 37,
+      "title": "Adoption Roadmap",
+      "subtitle": "The Practice",
+      "content": "A phased approach to agentic SDLC transformation.",
+      "items": [
+        { "title": "Phase 1: Foundation (0-6 mo)", "text": "Adopt AI assistants, train teams, establish governance", "icon": "Layers" },
+        { "title": "Phase 2: Platform (6-18 mo)", "text": "Build Internal Developer Platform, integrate toolchain", "icon": "Building" },
+        { "title": "Phase 3: Agentic (18+ mo)", "text": "Experiment with autonomous workflows, measure business value", "icon": "Rocket" }
+      ],
+      "type": "cards",
+      "icon": "Map"
+    },
+    {
+      "id": 38,
+      "title": "The Future",
+      "subtitle": "The Future",
+      "content": "Where agentic SDLC is heading.",
+      "icon": "Sparkles",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    A[2025] --> B[2026]\n    B --> C[2028+]\n    A --- D[AI-Assisted 76%]\n    B --- E[Agentic Mainstream]\n    C --- F[AI Orchestrates Teams]"
+    },
+    {
+      "id": 39,
+      "title": "Near-Term: 2025-2026",
+      "subtitle": "The Future",
+      "content": "What to expect in the next 12-18 months.",
+      "items": [
+        { "title": "60-80% Automation", "text": "AI will handle majority of repetitive coding tasks", "icon": "Bot" },
+        { "title": "AI-Managed Projects", "text": "Common for smaller, well-defined applications", "icon": "Folder" },
+        { "title": "Testing Revolution", "text": "AI testing will outperform traditional QC in speed and accuracy", "icon": "CheckCircle" },
+        { "title": "Autonomous DevOps", "text": "AI handling deployments and monitoring goes mainstream", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "Calendar"
+    },
+    {
+      "id": 40,
+      "title": "Emerging Capabilities",
+      "subtitle": "The Future",
+      "content": "The next wave of agentic development.",
+      "items": [
+        { "title": "Multi-Agent Systems", "text": "Specialized agents collaborating via A2A protocol", "icon": "Network" },
+        { "title": "AI Agent Factories", "text": "Entire SDLC from requirements to deployment by agents", "icon": "Factory" },
+        { "title": "Proactive Assistance", "text": "AI that anticipates needs before you ask", "icon": "Sparkles" },
+        { "title": "Self-Improving Codebases", "text": "Continuous automated optimization and modernization", "icon": "RefreshCw" }
+      ],
+      "type": "list",
+      "icon": "Sparkles"
+    },
+    {
+      "id": 41,
+      "title": "Preparing Your Team",
+      "subtitle": "The Future",
+      "content": "How to position yourself and your organization for success.",
+      "items": [
+        { "title": "Embrace the Tools", "text": "Start using AI assistants in your daily workflow today", "icon": "Wrench" },
+        { "title": "Elevate Your Role", "text": "Shift from coder to intent-setter and reviewer", "icon": "TrendingUp" },
+        { "title": "Focus on Architecture", "text": "High-level design becomes more valuable than typing", "icon": "Layers" },
+        { "title": "Learn Agent Engineering", "text": "Building and orchestrating agents is the new skill", "icon": "Bot" }
+      ],
+      "type": "list",
+      "icon": "Users"
+    },
+    {
+      "id": 42,
+      "title": "Key Takeaways",
+      "subtitle": "Summary",
+      "content": "The essential points to remember.",
+      "items": [
+        { "title": "AI Elevates, Not Replaces", "text": "Developers become intent-setters, reviewers, and strategists", "icon": "Users" },
+        { "title": "Security is Critical", "text": "10x velocity without safeguards means 10x vulnerabilities", "icon": "Shield" },
+        { "title": "MCP is the Standard", "text": "Model Context Protocol unifies agent-tool connections", "icon": "Link" },
+        { "title": "Start Today", "text": "76% of the industry is already moving - don't get left behind", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 43,
+      "title": "Thank You",
+      "subtitle": "Agentic SDLC",
+      "content": "Questions? Let's discuss the future of software development.",
+      "icon": "MessageSquare",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[You] --> B[AI Agent]\n    B --> C[Better Software]\n    C --> D[Faster]\n    C --> E[Higher Quality]\n    C --> F[More Innovation]"
+    }
+  ]
+}

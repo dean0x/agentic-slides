@@ -38,7 +38,7 @@ src/
 │   └── PresentationContext.jsx  # State management for current presentation
 ├── presentations/
 │   ├── registry.js              # List of all available presentations
-│   └── gen-ai-hackathon/        # Example presentation
+│   └── intro-to-gen-ai/         # Example presentation
 │       └── slides.json          # Slide data in JSON format
 ├── components/
 │   ├── SlideRenderer.jsx        # Main slide rendering component
@@ -59,7 +59,7 @@ src/
 │   └── presentation.js          # Schema definitions (JSDoc)
 public/
 └── presentations/
-    └── gen-ai-hackathon/
+    └── intro-to-gen-ai/
         └── assets/              # Images for the presentation
 ```
 
@@ -208,4 +208,4 @@ Each presentation can override theme colors in its `slides.json`:
 ## Routes
 
 - `/` - Home page with presentation grid
-- `/presentation/:id` - Presentation viewer (e.g., `/presentation/gen-ai-hackathon`)
+- `/presentation/:id` - Presentation viewer (e.g., `/presentation/intro-to-gen-ai`)
