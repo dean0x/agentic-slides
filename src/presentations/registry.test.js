@@ -27,9 +27,9 @@ describe('Presentation Registry', () => {
 
   describe('findPresentation', () => {
     it('should find existing presentation by ID', () => {
-      const result = findPresentation('gen-ai-hackathon');
+      const result = findPresentation('intro-to-gen-ai');
       expect(result).toBeDefined();
-      expect(result.id).toBe('gen-ai-hackathon');
+      expect(result.id).toBe('intro-to-gen-ai');
     });
 
     it('should return undefined for non-existent ID', () => {

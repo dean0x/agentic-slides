@@ -1,12 +1,12 @@
 {
   "meta": {
-    "id": "gen-ai-hackathon",
-    "title": "Gen AI Hackathon Education Session",
-    "subtitle": "Curriculum",
-    "description": "Equipping you with the knowledge and tools to succeed in the Gen AI Hackathon.",
+    "id": "intro-to-gen-ai",
+    "title": "Intro to Gen AI",
+    "subtitle": "Foundations",
+    "description": "Comprehensive introduction to Gen AI concepts including LLMs, prompt engineering, RAG, tool use, MCP, and agents.",
     "author": "Education Team",
     "date": "2025",
-    "tags": ["ai", "llm", "rag", "agents", "mcp", "hackathon"]
+    "tags": ["ai", "llm", "rag", "agents", "mcp"]
   },
   "theme": {
     "benchmarkColors": {
@@ -21,9 +21,9 @@
   "slides": [
     {
       "id": 1,
-      "title": "Gen AI Hackathon Education Session",
-      "subtitle": "Curriculum",
-      "content": "Equipping you with the knowledge and tools to succeed in the Gen AI Hackathon.",
+      "title": "Intro to Gen AI",
+      "subtitle": "Foundations",
+      "content": "Comprehensive introduction to Gen AI concepts including LLMs, prompt engineering, RAG, tool use, MCP, and agents.",
       "image": "intro_slide.jpg",
       "icon": "Rocket",
       "type": "title"

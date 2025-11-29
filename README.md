@@ -149,7 +149,7 @@ src/
 │   └── PresentationContext.jsx  # State management
 ├── presentations/
 │   ├── registry.js              # List of all presentations
-│   └── gen-ai-hackathon/        # Example presentation
+│   └── intro-to-gen-ai/         # Example presentation
 │       └── slides.json          # Slide data
 ├── components/
 │   ├── SlideRenderer.jsx        # Main slide rendering
@@ -167,7 +167,7 @@ src/
     └── setup.js                 # Vitest setup
 public/
 └── presentations/
-    └── gen-ai-hackathon/
+    └── intro-to-gen-ai/
         └── assets/              # Presentation images
 ```
 
@@ -186,7 +186,7 @@ public/
 ## Routes
 
 - `/` - Home page with presentation grid
-- `/presentation/:id` - Presentation viewer (e.g., `/presentation/gen-ai-hackathon`)
+- `/presentation/:id` - Presentation viewer (e.g., `/presentation/intro-to-gen-ai`)
 
 ## License
 
