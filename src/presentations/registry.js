@@ -44,6 +44,17 @@ export const presentations = [
     tags: ['ai', 'sdlc', 'agents', 'development', 'automation'],
     thumbnail: null,
     loader: () => import('./agentic-sdlc/slides.json')
+  },
+  {
+    id: 'claude-vs-cursor',
+    title: 'Claude Code vs Cursor',
+    subtitle: "A Technical Leader's Guide",
+    description: 'Comprehensive comparison for enterprise decision-makers - security, architecture, economics, and long-term strategy.',
+    author: 'Engineering Team',
+    date: '2025',
+    tags: ['ai', 'tools', 'cursor', 'claude', 'development', 'enterprise', 'security'],
+    thumbnail: null,
+    loader: () => import('./claude-vs-cursor/slides.json')
   }
 ];
 

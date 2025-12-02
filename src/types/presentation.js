@@ -6,7 +6,7 @@
  */
 
 /**
- * @typedef {'title' | 'list' | 'cards' | 'code_split' | 'mermaid_split' | 'image_split' | 'timeline' | 'benchmark_chart'} SlideType
+ * @typedef {'title' | 'list' | 'cards' | 'code_split' | 'mermaid_split' | 'image_split' | 'image_comparison' | 'timeline' | 'benchmark_chart'} SlideType
  */
 
 /**
@@ -25,6 +25,12 @@
  */
 
 /**
+ * @typedef {Object} ComparisonImage
+ * @property {string} image - Image path (relative to public folder)
+ * @property {string} [label] - Label displayed below the image
+ */
+
+/**
  * @typedef {Object} Slide
  * @property {number} id - Unique slide ID within presentation
  * @property {string} title - Slide title
@@ -38,6 +44,7 @@
  * @property {string} [visualContent] - Mermaid diagram or code content
  * @property {string} [image] - Image filename (relative to presentation assets)
  * @property {BenchmarkDataPoint[]} [benchmarkData] - Data for benchmark charts
+ * @property {ComparisonImage[]} [comparisonImages] - Images for image_comparison type (requires exactly 2)
  */
 
 /**
@@ -93,6 +100,7 @@ export const SLIDE_TYPES = [
   'code_split',
   'mermaid_split',
   'image_split',
+  'image_comparison',
   'timeline',
   'benchmark_chart'
 ];
