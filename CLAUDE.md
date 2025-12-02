@@ -136,6 +136,7 @@ Place images in `public/presentations/my-presentation/assets/` and reference the
 | `benchmark_chart` | 40% header / 60% chart | Horizontal bar chart |
 | `timeline` | 40% header / 60% items | Same as list |
 | `image_split` | 40% header / 60% image | Image with items |
+| `image_comparison` | Compact header / side-by-side images | Two images with VS divider, click to enlarge |
 
 ## Slide Properties
 
@@ -153,6 +154,7 @@ interface Slide {
   visualContent?: string;        // Mermaid diagram or code
   image?: string;                // Image filename
   benchmarkData?: BenchmarkData[];  // For benchmark_chart type
+  comparisonImages?: ComparisonImage[];  // For image_comparison type (requires 2)
 }
 
 interface SlideItem {
@@ -166,6 +168,11 @@ interface BenchmarkData {
   model: string;
   score: string | number;
   color?: string;                // Override chart color
+}
+
+interface ComparisonImage {
+  image: string;                 // Image path (relative to public folder)
+  label?: string;                // Label displayed below the image
 }
 ```
 

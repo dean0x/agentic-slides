@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BenchmarkChart } from './BenchmarkChart';
 import {
@@ -41,19 +41,19 @@ export function SlideRenderer({ slide, currentIndex, totalSlides, defaultSubtitl
 
   const layout = getLayoutType(slide);
 
-  // Close lightbox on Escape key
-  const handleKeyDown = useCallback((e) => {
-    if (e.key === 'Escape' && enlargedImage) {
-      setEnlargedImage(null);
-    }
-  }, [enlargedImage]);
-
+  // Close lightbox on Escape key - stable callback to avoid re-registration
   useEffect(() => {
-    if (enlargedImage) {
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
-    }
-  }, [enlargedImage, handleKeyDown]);
+    if (!enlargedImage) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setEnlargedImage(null);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [enlargedImage]);
 
   return (
     <div className="h-screen w-full bg-[#F5F5F7] text-text overflow-hidden flex items-center justify-center p-6 xl:p-12">
@@ -299,70 +299,76 @@ export function SlideRenderer({ slide, currentIndex, totalSlides, defaultSubtitl
             </motion.div>
 
             {/* Images Comparison Area */}
-            <motion.div
-              className="flex-1 flex gap-6 min-h-0"
-              variants={containerVariants}
-              initial="hidden"
-              animate="show"
-              key={`images-${slide.id}`}
-            >
-              {/* First Image */}
+            {slide.comparisonImages?.length >= 2 ? (
               <motion.div
-                className="flex-1 flex flex-col min-w-0"
-                variants={itemVariants}
+                className="flex-1 flex gap-6 min-h-0"
+                variants={containerVariants}
+                initial="hidden"
+                animate="show"
+                key={`images-${slide.id}`}
               >
-                <button
-                  onClick={() => setEnlargedImage(slide.comparisonImages?.[0])}
-                  className="flex-1 bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center p-4 cursor-zoom-in hover:border-gray-300 hover:shadow-md transition-all group"
+                {/* First Image */}
+                <motion.div
+                  className="flex-1 flex flex-col min-w-0"
+                  variants={itemVariants}
                 >
-                  <img
-                    src={slide.comparisonImages?.[0]?.image}
-                    alt={slide.comparisonImages?.[0]?.label || 'Comparison image 1'}
-                    className="max-w-full max-h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform"
-                  />
-                </button>
-                {slide.comparisonImages?.[0]?.label && (
-                  <div className="mt-3 text-center">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold text-sm">
-                      {slide.comparisonImages[0].label}
+                  <button
+                    onClick={() => setEnlargedImage(slide.comparisonImages[0])}
+                    className="flex-1 bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center p-4 cursor-zoom-in hover:border-gray-300 hover:shadow-md transition-all group"
+                  >
+                    <img
+                      src={slide.comparisonImages[0].image}
+                      alt={slide.comparisonImages[0].label || 'Comparison image 1'}
+                      className="max-w-full max-h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform"
+                    />
+                  </button>
+                  {slide.comparisonImages[0].label && (
+                    <div className="mt-3 text-center">
+                      <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold text-sm">
+                        {slide.comparisonImages[0].label}
+                      </span>
+                    </div>
+                  )}
+                </motion.div>
+
+                {/* VS Divider */}
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  <div className="w-px h-full bg-gray-200 relative">
+                    <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 py-1 text-xs font-bold text-gray-400 rounded">
+                      VS
                     </span>
                   </div>
-                )}
-              </motion.div>
-
-              {/* VS Divider */}
-              <div className="flex-shrink-0 flex items-center justify-center">
-                <div className="w-px h-full bg-gray-200 relative">
-                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white px-2 py-1 text-xs font-bold text-gray-400 rounded">
-                    VS
-                  </span>
                 </div>
-              </div>
 
-              {/* Second Image */}
-              <motion.div
-                className="flex-1 flex flex-col min-w-0"
-                variants={itemVariants}
-              >
-                <button
-                  onClick={() => setEnlargedImage(slide.comparisonImages?.[1])}
-                  className="flex-1 bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center p-4 cursor-zoom-in hover:border-gray-300 hover:shadow-md transition-all group"
+                {/* Second Image */}
+                <motion.div
+                  className="flex-1 flex flex-col min-w-0"
+                  variants={itemVariants}
                 >
-                  <img
-                    src={slide.comparisonImages?.[1]?.image}
-                    alt={slide.comparisonImages?.[1]?.label || 'Comparison image 2'}
-                    className="max-w-full max-h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform"
-                  />
-                </button>
-                {slide.comparisonImages?.[1]?.label && (
-                  <div className="mt-3 text-center">
-                    <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold text-sm">
-                      {slide.comparisonImages[1].label}
-                    </span>
-                  </div>
-                )}
+                  <button
+                    onClick={() => setEnlargedImage(slide.comparisonImages[1])}
+                    className="flex-1 bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex items-center justify-center p-4 cursor-zoom-in hover:border-gray-300 hover:shadow-md transition-all group"
+                  >
+                    <img
+                      src={slide.comparisonImages[1].image}
+                      alt={slide.comparisonImages[1].label || 'Comparison image 2'}
+                      className="max-w-full max-h-full object-contain rounded-lg group-hover:scale-[1.02] transition-transform"
+                    />
+                  </button>
+                  {slide.comparisonImages[1].label && (
+                    <div className="mt-3 text-center">
+                      <span className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold text-sm">
+                        {slide.comparisonImages[1].label}
+                      </span>
+                    </div>
+                  )}
+                </motion.div>
               </motion.div>
-            </motion.div>
+            ) : (
+              <div className="flex-1 flex items-center justify-center text-secondary">
+                <p>Missing comparison images (requires exactly 2)</p>
+              </div>
+            )}
           </div>
         )}
 
