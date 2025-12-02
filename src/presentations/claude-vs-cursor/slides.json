@@ -4,9 +4,14 @@
     "title": "Claude Code vs Cursor",
     "subtitle": "A Technical Leader's Guide",
     "description": "Comprehensive comparison for enterprise decision-makers - security, architecture, economics, and long-term strategy.",
-    "author": "Engineering Team",
+    "author": "Squid Club",
     "date": "2025",
-    "tags": ["ai", "tools", "cursor", "claude", "development", "enterprise", "security"]
+    "tags": ["ai", "tools", "cursor", "claude", "development", "enterprise", "security"],
+    "source": {
+      "title": "Claude Code vs Cursor: A Technical Leader's Guide to Making the Right Choice for Your Organization",
+      "url": "https://www.squid-club.com/blog/claude-code-vs-cursor-a-technical-leaders-guide-to-making-the-right-choice-for-your-organization",
+      "author": "Squid Club"
+    }
   },
   "theme": {
     "colors": {
@@ -452,6 +457,19 @@
       ],
       "type": "list",
       "icon": "Sparkles"
+    },
+    {
+      "id": 35,
+      "title": "Sources & Credits",
+      "subtitle": "Attribution",
+      "content": "This presentation is based on original research and analysis.",
+      "items": [
+        { "title": "Original Article", "text": "Claude Code vs Cursor: A Technical Leader's Guide to Making the Right Choice for Your Organization", "icon": "FileText" },
+        { "title": "Author", "text": "Squid Club", "icon": "User" },
+        { "title": "Source", "text": "squid-club.com/blog/claude-code-vs-cursor-a-technical-leaders-guide-to-making-the-right-choice-for-your-organization", "icon": "Link" }
+      ],
+      "type": "list",
+      "icon": "BookOpen"
     }
   ]
 }
