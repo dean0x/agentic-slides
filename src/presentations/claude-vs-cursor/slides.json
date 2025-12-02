@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "id": "claude-vs-cursor",
+    "title": "Claude Code vs Cursor",
+    "subtitle": "A Technical Leader's Guide",
+    "description": "Comprehensive comparison for enterprise decision-makers - security, architecture, economics, and long-term strategy.",
+    "author": "Engineering Team",
+    "date": "2025",
+    "tags": ["ai", "tools", "cursor", "claude", "development", "enterprise", "security"]
+  },
+  "theme": {
+    "colors": {
+      "primary": "#d97706"
+    },
+    "mermaid": {
+      "primaryColor": "#fef3c7",
+      "primaryTextColor": "#1e293b",
+      "primaryBorderColor": "#f59e0b"
+    },
+    "benchmarkColors": {
+      "Claude Code": "#d97706",
+      "Cursor": "#6366f1",
+      "Traditional": "#94a3b8"
+    }
+  },
+  "slides": [
+    {
+      "id": 1,
+      "title": "Claude Code vs Cursor",
+      "subtitle": "Introduction",
+      "content": "A technical leader's guide to making the right choice for your organization.",
+      "icon": "Scale",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[AI Coding Tools] --> B[Claude Code]\n    A --> C[Cursor]\n    B --> D[Client-Side]\n    B --> E[Direct to Anthropic]\n    C --> F[Server-Side]\n    C --> G[Through Cursor Servers]"
+    },
+    {
+      "id": 2,
+      "title": "The Enterprise Perspective",
+      "subtitle": "Introduction",
+      "content": "This isn't about which tool developers like - it's about architectural decisions that cascade through your entire organization.",
+      "items": [
+        { "title": "20+ Companies Evaluated", "text": "Every single one chose Claude Code for enterprise deployment", "icon": "Building" },
+        { "title": "Not About 'Better'", "text": "The architectural differences matter for security, cost, and production agents", "icon": "Shield" },
+        { "title": "Long-Term Strategy", "text": "Your choice today defines your AI infrastructure for years", "icon": "TrendingUp" }
+      ],
+      "type": "cards",
+      "icon": "Briefcase"
+    },
+    {
+      "id": 3,
+      "title": "What We'll Cover",
+      "subtitle": "Agenda",
+      "content": "The critical factors for enterprise decision-making.",
+      "items": [
+        { "title": "1. Architecture", "text": "Where your code actually goes", "icon": "Server" },
+        { "title": "2. Economics", "text": "Why rate limits matter more than you think", "icon": "DollarSign" },
+        { "title": "3. Supply Chain Security", "text": "The elephant in the room", "icon": "Shield" },
+        { "title": "4. Gateway Control", "text": "Enterprise audit and compliance", "icon": "Lock" },
+        { "title": "5. Production Agents", "text": "Planning for the future", "icon": "Bot" },
+        { "title": "6. Decision Framework", "text": "Making the right choice", "icon": "GitBranch" }
+      ],
+      "type": "list",
+      "icon": "List"
+    },
+    {
+      "id": 4,
+      "title": "Architecture",
+      "subtitle": "Where Your Code Goes",
+      "content": "The most fundamental difference - everything else flows from here.",
+      "icon": "Server",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    subgraph Claude Code\n        A[Your Machine] -->|Direct| B[Anthropic]\n    end\n    subgraph Cursor\n        C[Your Machine] --> D[Cursor Servers]\n        D --> E[LLM Provider]\n    end"
+    },
+    {
+      "id": 5,
+      "title": "Cursor: Server-Side Processing",
+      "subtitle": "Architecture",
+      "content": "All LLM requests route through Cursor's infrastructure.",
+      "items": [
+        { "title": "Code in Transit", "text": "Every line of code travels through Cursor's servers before reaching the LLM", "icon": "Route" },
+        { "title": "Vector Embeddings", "text": "For code retrieval, Cursor performs embeddings on their servers - not temporarily, but ongoing", "icon": "Database" },
+        { "title": "Additional Failure Point", "text": "Your code sits on Cursor's servers, waiting in queue", "icon": "AlertTriangle" },
+        { "title": "Limited Control", "text": "Dependent on Cursor's infrastructure and uptime", "icon": "Lock" }
+      ],
+      "type": "list",
+      "icon": "Cloud"
+    },
+    {
+      "id": 6,
+      "title": "Claude Code: Client-Side Processing",
+      "subtitle": "Architecture",
+      "content": "Requests go directly from your machine to Anthropic's models.",
+      "items": [
+        { "title": "No Intermediate Server", "text": "Just your machine talking to the model - no middle layer", "icon": "Zap" },
+        { "title": "No Additional Storage", "text": "No code sitting on third-party infrastructure", "icon": "Shield" },
+        { "title": "Direct Connection", "text": "Faster, more reliable, fewer points of failure", "icon": "Link" },
+        { "title": "Gateway Ready", "text": "Can route through your own infrastructure (AWS Bedrock)", "icon": "Server" }
+      ],
+      "type": "cards",
+      "icon": "Terminal"
+    },
+    {
+      "id": 7,
+      "title": "Architecture Implications",
+      "subtitle": "Architecture",
+      "content": "Why this difference matters for enterprises.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    A[Architecture Choice] --> B[Data Flow]\n    A --> C[Security Model]\n    A --> D[Compliance]\n    B --> E[Who Sees Your Code?]\n    C --> F[Attack Surface]\n    D --> G[Audit Capability]"
+    },
+    {
+      "id": 8,
+      "title": "The Economics",
+      "subtitle": "Rate Limits & Pricing",
+      "content": "Why rate limits matter more than you think.",
+      "icon": "DollarSign",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[AI-First Developer] --> B{Hits Rate Limits?}\n    B -->|Never| C[Probably Not AI-First]\n    B -->|Daily| D[Productivity Impact]\n    D --> E[Cost Escalation]\n    D --> F[Developer Frustration]"
+    },
+    {
+      "id": 9,
+      "title": "Cursor's Pricing Reality",
+      "subtitle": "Economics",
+      "content": "The $20/month plan comes with limits that experienced developers hit regularly.",
+      "items": [
+        { "title": "$20/mo Basic", "text": "Rate limits that AI-first developers hit daily", "icon": "CreditCard" },
+        { "title": "When You Exceed", "text": "Wait for reset OR switch to pay-per-token pricing", "icon": "Clock" },
+        { "title": "Team Costs Escalate", "text": "Per-token pricing for a team can escalate very quickly", "icon": "TrendingUp" },
+        { "title": "Usage Anxiety", "text": "Engineers hesitant to use the tool due to cost concerns", "icon": "AlertCircle" }
+      ],
+      "type": "list",
+      "icon": "Receipt"
+    },
+    {
+      "id": 10,
+      "title": "Claude Code's Economics",
+      "subtitle": "Economics",
+      "content": "Dramatically different value proposition at scale.",
+      "items": [
+        { "title": "$200/mo Account", "text": "Consistently delivers $5,000+ in equivalent token value", "icon": "TrendingUp" },
+        { "title": "Why The Difference?", "text": "Anthropic controls the infrastructure end-to-end", "icon": "Server" },
+        { "title": "Anthropic's Incentive", "text": "Maximize utilization - servers run 24/7 anyway", "icon": "Zap" },
+        { "title": "Cursor's Incentive", "text": "Limit usage - they pay Anthropic per API request", "icon": "Gauge" }
+      ],
+      "type": "cards",
+      "icon": "DollarSign"
+    },
+    {
+      "id": 11,
+      "title": "Real-World Billing Comparison",
+      "subtitle": "Economics",
+      "content": "See the difference: Cursor's usage-based costs vs Claude's flat rate.",
+      "type": "image_comparison",
+      "comparisonImages": [
+        {
+          "image": "/presentations/claude-vs-cursor/assets/cursor-billing.png",
+          "label": "Cursor Pro+ · $4,104 usage / $5,250 limit"
+        },
+        {
+          "image": "/presentations/claude-vs-cursor/assets/claude-billing.png",
+          "label": "Claude Max · $200/month flat"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "The Unit Economics Problem",
+      "subtitle": "Economics",
+      "content": "Why Cursor may struggle to maintain their position long-term.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    subgraph Anthropic\n        A[Own Infrastructure] --> B[Fixed Costs]\n        B --> C[Incentive: More Usage]\n    end\n    subgraph Cursor\n        D[Pays Per Request] --> E[Variable Costs]\n        E --> F[Incentive: Limit Usage]\n    end"
+    },
+    {
+      "id": 13,
+      "title": "Supply Chain Security",
+      "subtitle": "The Elephant in the Room",
+      "content": "What every CISO should know about VS Code forks.",
+      "icon": "Shield",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Cursor] --> B[VS Code Fork]\n    B --> C[Cannot Use Microsoft Marketplace]\n    C --> D[Uses OpenVSX]\n    D --> E[Different Security Posture]\n    E --> F[Supply Chain Risk]"
+    },
+    {
+      "id": 14,
+      "title": "The VS Code Fork Problem",
+      "subtitle": "Supply Chain Security",
+      "content": "Cursor inherits significant supply chain risk from its architecture.",
+      "items": [
+        { "title": "VS Code License", "text": "Forks are free - but cannot use Microsoft's official marketplace", "icon": "FileText" },
+        { "title": "OpenVSX Instead", "text": "Cursor uses OpenVSX, an open-source marketplace alternative", "icon": "Package" },
+        { "title": "Different Monitoring", "text": "Microsoft doesn't monitor OpenVSX with the same rigor", "icon": "Eye" },
+        { "title": "Escalating Attacks", "text": "Recent months show increasing supply chain attacks on VS Code marketplaces", "icon": "AlertTriangle" }
+      ],
+      "type": "list",
+      "icon": "Lock"
+    },
+    {
+      "id": 15,
+      "title": "GlassWorm Attack (Oct 2025)",
+      "subtitle": "Supply Chain Security",
+      "content": "A self-propagating worm spreading through VS Code extensions.",
+      "items": [
+        { "title": "7 OpenVSX Extensions", "text": "Compromised in just one week", "icon": "Bug" },
+        { "title": "35,000+ Downloads", "text": "Before detection occurred", "icon": "Download" },
+        { "title": "Expert Assessment", "text": "\"One of the most sophisticated supply chain attacks ever analyzed\"", "icon": "AlertTriangle" },
+        { "title": "Capabilities", "text": "Credential harvesting, crypto wallet draining, SOCKS proxy deployment", "icon": "Skull" }
+      ],
+      "type": "cards",
+      "icon": "ShieldAlert"
+    },
+    {
+      "id": 16,
+      "title": "Supply Chain Risk Impact",
+      "subtitle": "Supply Chain Security",
+      "content": "What this means for organizations using Cursor.",
+      "items": [
+        { "title": "Additional Security Review", "text": "Every extension needs thorough vetting", "icon": "Search" },
+        { "title": "Compromised Environments", "text": "Potential for developer machine compromise", "icon": "Terminal" },
+        { "title": "Credential Theft Risk", "text": "NPM, GitHub, Git credentials at risk", "icon": "Key" },
+        { "title": "Compliance Concerns", "text": "Significant issues for regulated industries", "icon": "FileWarning" }
+      ],
+      "type": "list",
+      "icon": "AlertCircle"
+    },
+    {
+      "id": 17,
+      "title": "Gateway Control",
+      "subtitle": "Enterprise Features",
+      "content": "Monitoring, auditing, and controlling AI interactions.",
+      "icon": "Lock",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph LR\n    A[Engineer Workstation] --> B[Your Gateway]\n    B --> C[Monitor Requests]\n    B --> D[Validate Content]\n    B --> E[Audit Logs]\n    B --> F[AWS Bedrock]\n    F --> G[Claude Models]"
+    },
+    {
+      "id": 18,
+      "title": "AWS Bedrock Integration",
+      "subtitle": "Gateway Control",
+      "content": "Claude Code enables enterprise-grade control through private gateways.",
+      "items": [
+        { "title": "Request Monitoring", "text": "Monitor every request leaving engineer workstations", "icon": "Eye" },
+        { "title": "Content Validation", "text": "Validate no sensitive company information is sent", "icon": "Shield" },
+        { "title": "Custom Rate Limiting", "text": "Implement organization-specific access controls", "icon": "Gauge" },
+        { "title": "Audit Logs", "text": "Maintain compliance-ready logs for every interaction", "icon": "FileText" }
+      ],
+      "type": "cards",
+      "icon": "Server"
+    },
+    {
+      "id": 19,
+      "title": "Why Gateway Control Matters",
+      "subtitle": "Gateway Control",
+      "content": "The architecture determines what's possible.",
+      "items": [
+        { "title": "Claude Code: Possible", "text": "Client-side requests can be routed through your infrastructure", "icon": "Check" },
+        { "title": "Cursor: Not Possible", "text": "Requests go through Cursor servers first - you can't intercept", "icon": "X" },
+        { "title": "Regulated Industries", "text": "Finance, healthcare, government require audit capability", "icon": "Building" },
+        { "title": "Not Optional", "text": "For many organizations, this level of control is required - not nice to have", "icon": "AlertTriangle" }
+      ],
+      "type": "list",
+      "icon": "Lock"
+    },
+    {
+      "id": 20,
+      "title": "Production Agents",
+      "subtitle": "Planning for the Future",
+      "content": "Your development tool choice impacts your AI strategy.",
+      "icon": "Bot",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Claude Code Approval] --> B[Claude SDK Approved]\n    B --> C[Same Security Review]\n    B --> D[Same Compliance Checks]\n    B --> E[Production Agent Ready]\n    \n    F[Cursor] --> G[Development Tool Only]\n    G --> H[Separate Agent Platform Needed]"
+    },
+    {
+      "id": 21,
+      "title": "The SDK Advantage",
+      "subtitle": "Production Agents",
+      "content": "Claude Code is part of a broader ecosystem.",
+      "items": [
+        { "title": "Ecosystem Alignment", "text": "Approving Claude Code = approving Claude SDK for production", "icon": "Package" },
+        { "title": "Security Transfer", "text": "Security review, compliance checks, architectural decisions all transfer", "icon": "Shield" },
+        { "title": "Cursor Limitation", "text": "Cursor is a development tool, not a platform for production agents", "icon": "AlertCircle" },
+        { "title": "Future-Proofing", "text": "Build development AND production on the same foundation", "icon": "Rocket" }
+      ],
+      "type": "cards",
+      "icon": "Layers"
+    },
+    {
+      "id": 22,
+      "title": "The Testing Principle",
+      "subtitle": "Production Agents",
+      "content": "Claude Code as your testing ground for production viability.",
+      "items": [
+        { "title": "The Rule", "text": "If Claude Code can't succeed under full supervision, your production agent won't succeed", "icon": "Target" },
+        { "title": "Task Decomposition", "text": "Understand how to break down complex tasks for agents", "icon": "GitBranch" },
+        { "title": "Error Modes", "text": "Learn the failure patterns before production", "icon": "Bug" },
+        { "title": "Edge Cases", "text": "Discover edge cases in a controlled environment", "icon": "Search" }
+      ],
+      "type": "list",
+      "icon": "Beaker"
+    },
+    {
+      "id": 23,
+      "title": "Decision Framework",
+      "subtitle": "Making the Choice",
+      "content": "Critical factors for enterprise evaluation.",
+      "icon": "GitBranch",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[Evaluation] --> B[Architecture]\n    A --> C[Cost at Scale]\n    A --> D[Supply Chain]\n    A --> E[Gateway Control]\n    A --> F[Production Strategy]\n    B --> G[Decision]\n    C --> G\n    D --> G\n    E --> G\n    F --> G"
+    },
+    {
+      "id": 24,
+      "title": "Critical for Most Organizations",
+      "subtitle": "Decision Framework",
+      "content": "The questions every technical leader should answer.",
+      "items": [
+        { "title": "Architecture Review", "text": "Where does your code go? Who has access to it?", "icon": "Server" },
+        { "title": "Cost Modeling", "text": "Calculate costs for your team size at realistic AI-first usage levels", "icon": "Calculator" },
+        { "title": "Supply Chain Assessment", "text": "What's your risk tolerance for marketplace attacks?", "icon": "Shield" },
+        { "title": "Future Planning", "text": "Are you building production agents? What's your AI strategy?", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "CheckSquare"
+    },
+    {
+      "id": 25,
+      "title": "For Regulated Industries",
+      "subtitle": "Decision Framework",
+      "content": "Additional considerations for finance, healthcare, government.",
+      "items": [
+        { "title": "Gateway Control", "text": "Can you monitor and audit all LLM interactions?", "icon": "Eye" },
+        { "title": "Compliance Requirements", "text": "What certifications and controls do you need?", "icon": "FileCheck" },
+        { "title": "Data Residency", "text": "Where is your code processed and stored?", "icon": "MapPin" },
+        { "title": "Audit Trail", "text": "Can you prove compliance to regulators?", "icon": "FileText" }
+      ],
+      "type": "cards",
+      "icon": "Building"
+    },
+    {
+      "id": 26,
+      "title": "The Real Decision Pattern",
+      "subtitle": "Decision Framework",
+      "content": "What happens when organizations actually evaluate.",
+      "type": "mermaid_split",
+      "visualContent": "graph TD\n    A[Initial Attraction to Cursor] --> B[Familiar VS Code]\n    A --> C[Easy Onboarding]\n    A --> D[Developer Marketing]\n    \n    E[Reality Check] --> F[Data Flow Analysis]\n    E --> G[Cost at Scale]\n    E --> H[Supply Chain Risk]\n    E --> I[Compliance Needs]\n    \n    F --> J[Choose Claude Code]\n    G --> J\n    H --> J\n    I --> J"
+    },
+    {
+      "id": 27,
+      "title": "Developer Experience Reality",
+      "subtitle": "Decision Framework",
+      "content": "What developers actually care about.",
+      "items": [
+        { "title": "Does It Help?", "text": "Developers care most about actual productivity gains", "icon": "Zap" },
+        { "title": "No Friction", "text": "They don't want limits and restrictions getting in the way", "icon": "Check" },
+        { "title": "Claude Code Delivers", "text": "Generous limits mean engineers rarely hit them during normal work", "icon": "TrendingUp" },
+        { "title": "When Pushing Limits", "text": "AI-first developers aren't facing unexpected bills or daily caps", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "Users"
+    },
+    {
+      "id": 28,
+      "title": "The Hybrid Question",
+      "subtitle": "Decision Framework",
+      "content": "Can you use both tools together?",
+      "items": [
+        { "title": "Technically Yes", "text": "Claude Code can run inside Cursor via extension", "icon": "Plug" },
+        { "title": "But Consider", "text": "You still inherit Cursor's supply chain risks", "icon": "AlertTriangle" },
+        { "title": "Gateway Issue", "text": "You can't route Cursor's requests through your infrastructure", "icon": "Lock" },
+        { "title": "Recommendation", "text": "For enterprise: standardize on Claude Code, use any editor", "icon": "Target" }
+      ],
+      "type": "cards",
+      "icon": "Combine"
+    },
+    {
+      "id": 29,
+      "title": "When Cursor Makes Sense",
+      "subtitle": "Decision Framework",
+      "content": "Cursor isn't wrong for everyone.",
+      "items": [
+        { "title": "Individual Developers", "text": "Personal projects without security requirements", "icon": "User" },
+        { "title": "Small Teams", "text": "No strict compliance or audit needs", "icon": "Users" },
+        { "title": "Experimentation", "text": "Testing AI coding before enterprise commitment", "icon": "Beaker" },
+        { "title": "VS Code Dependency", "text": "Teams that absolutely require VS Code's specific features", "icon": "Code" }
+      ],
+      "type": "list",
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 30,
+      "title": "The Bigger Question",
+      "subtitle": "Conclusion",
+      "content": "This decision is really a proxy for your AI strategy.",
+      "icon": "Compass",
+      "type": "title",
+      "visualType": "mermaid",
+      "visualContent": "graph TD\n    A[How Seriously Are You Taking AI-First?] --> B{Strategy}\n    B -->|Experiment| C[Choice Matters Less]\n    B -->|Core Strategy| D[Foundation Matters]\n    D --> E[Security Architecture]\n    D --> F[Cost Scaling]\n    D --> G[Production Agents]\n    D --> H[Long-Term Platform]"
+    },
+    {
+      "id": 31,
+      "title": "Strategic Implications",
+      "subtitle": "Conclusion",
+      "content": "Your choice today defines your AI infrastructure for years.",
+      "items": [
+        { "title": "Not About This Week", "text": "Stop asking which tool developers like today", "icon": "Calendar" },
+        { "title": "Think 2-3 Years", "text": "AI-first development will be how your team works", "icon": "TrendingUp" },
+        { "title": "Foundation Matters", "text": "Development tools evolve into production infrastructure", "icon": "Building" },
+        { "title": "Security First", "text": "Architecture, supply chain, and compliance compound over time", "icon": "Shield" }
+      ],
+      "type": "cards",
+      "icon": "Target"
+    },
+    {
+      "id": 32,
+      "title": "Key Takeaways",
+      "subtitle": "Conclusion",
+      "content": "What technical leaders need to remember.",
+      "items": [
+        { "title": "Architecture Matters", "text": "Client-side vs server-side determines security posture", "icon": "Server" },
+        { "title": "Economics Favor Claude", "text": "Anthropic's unit economics enable generous usage", "icon": "DollarSign" },
+        { "title": "Supply Chain Risk", "text": "VS Code forks inherit marketplace vulnerabilities", "icon": "Shield" },
+        { "title": "Gateway Control", "text": "Only client-side architecture enables enterprise audit", "icon": "Lock" },
+        { "title": "Production Strategy", "text": "Claude Code aligns development and production platforms", "icon": "Rocket" }
+      ],
+      "type": "list",
+      "icon": "Bookmark"
+    },
+    {
+      "id": 33,
+      "title": "The Bottom Line",
+      "subtitle": "Conclusion",
+      "content": "Not about better or worse - about fit for your organization.",
+      "items": [
+        { "title": "Enterprise Requirements", "text": "Security, compliance, audit, scale → Claude Code", "icon": "Building" },
+        { "title": "Individual Use", "text": "Personal projects, experimentation → Either tool", "icon": "User" },
+        { "title": "The Pattern", "text": "20+ companies evaluated, all chose Claude Code for enterprise", "icon": "BarChart" }
+      ],
+      "type": "cards",
+      "icon": "Scale"
+    },
+    {
+      "id": 34,
+      "title": "Final Thought",
+      "subtitle": "Conclusion",
+      "content": "The architectural differences matter. A lot.",
+      "items": [
+        { "title": "Cursor's Tradeoffs", "text": "Made specific decisions to create their product - acceptable for some use cases", "icon": "GitBranch" },
+        { "title": "Enterprise Needs", "text": "Security, cost management, supply chain, compliance, audit - these compound", "icon": "Layers" },
+        { "title": "Make the Right Choice", "text": "Evaluate based on your actual requirements, not developer preferences", "icon": "Target" }
+      ],
+      "type": "list",
+      "icon": "Sparkles"
+    }
+  ]
+}
