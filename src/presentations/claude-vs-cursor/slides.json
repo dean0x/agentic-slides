@@ -129,9 +129,9 @@
       "id": 9,
       "title": "Cursor's Pricing Reality",
       "subtitle": "Economics",
-      "content": "The $20/month plan comes with limits that experienced developers hit regularly.",
+      "content": "The $40/user/month Teams plan comes with limits that experienced developers hit regularly.",
       "items": [
-        { "title": "$20/mo Basic", "text": "Rate limits that AI-first developers hit daily", "icon": "CreditCard" },
+        { "title": "$40/user/mo Teams", "text": "Rate limits that AI-first developers hit daily", "icon": "CreditCard" },
         { "title": "When You Exceed", "text": "Wait for reset OR switch to pay-per-token pricing", "icon": "Clock" },
         { "title": "Team Costs Escalate", "text": "Per-token pricing for a team can escalate very quickly", "icon": "TrendingUp" },
         { "title": "Usage Anxiety", "text": "Engineers hesitant to use the tool due to cost concerns", "icon": "AlertCircle" }
@@ -143,9 +143,9 @@
       "id": 10,
       "title": "Claude Code's Economics",
       "subtitle": "Economics",
-      "content": "Dramatically different value proposition at scale.",
+      "content": "Higher base cost, dramatically different value proposition at scale.",
       "items": [
-        { "title": "$200/mo Account", "text": "Consistently delivers $5,000+ in equivalent token value", "icon": "TrendingUp" },
+        { "title": "$150/user/mo Teams", "text": "Premium seat delivers significantly more token value per dollar", "icon": "TrendingUp" },
         { "title": "Why The Difference?", "text": "Anthropic controls the infrastructure end-to-end", "icon": "Server" },
         { "title": "Anthropic's Incentive", "text": "Maximize utilization - servers run 24/7 anyway", "icon": "Zap" },
         { "title": "Cursor's Incentive", "text": "Limit usage - they pay Anthropic per API request", "icon": "Gauge" }
